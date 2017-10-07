@@ -276,12 +276,12 @@
             $(function () {
                 $('#example1').DataTable()
                 $('#example2').DataTable({
-                    'paging'      : true,
+                    'paging': true,
                     'lengthChange': false,
-                    'searching'   : false,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : false
+                    'searching': false,
+                    'ordering': true,
+                    'info': true,
+                    'autoWidth': false
                 })
             })
         </script>
@@ -298,15 +298,36 @@
                 <li class="active">Profissionais</li>
             </ol>
         </section>
+
+        <section class="">
+            <div class="">
+                <div class="col-md-3">
+                    <div class="box box-body" style="margin-top: 15px;">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Ações</h3>
+
+                        </div>
+                        <div class="box-body no-padding">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#"><i class="fa fa-inbox"></i> Incluir
+                                    <span class="label label-primary pull-right">12</span></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> Alterar</a></li>
+                                <li><a href="#"><i class="fa fa-file-text-o"></i> Excluir</a></li>
+
+                            </ul>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /. box -->
+                </div>
+            </div>
+        </section>
+
         <section class="content">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-9">
 
                     <div class="box">
-                        <!--<div class="box-header">-->
-                        <!--<h3 class="box-title">Data Table With Full Features</h3>-->
-                        <!--</div>-->
-                        <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
@@ -746,13 +767,12 @@
             </div>
             <!-- /.row -->
         </section>
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->
+        <!--------------------------
+          | Your Page Content Here |
+          -------------------------->
 
 
-
-            <!--fucking-->
+        <!--fucking-->
 
 
         <!-- /.content -->
@@ -856,7 +876,6 @@
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
-
 
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

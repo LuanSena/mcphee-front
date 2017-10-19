@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,10 +22,56 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+    <!--Angular app-->
+    <script src="angular_app/angular.min.js"></script>
+    <script type="text/javascript" src="angular_app/app.js"></script>
+    <script type="text/javascript" src="angular_app/constants.js"></script>
+    <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
+    <script type="text/javascript" src="angular_app/controllers/loginController.js"></script>
+
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body ng-controller="appController as appCtl" class="hold-transition skin-blue sidebar-mini" >
+
+<div ng-show="appCtl.getShowLogin()" class="login-box">
+    <div class="login-logo">
+        <a href="starter.html"><b>Mc</b>Phee</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body" ng-controller="loginController">
+        <p class="login-box-msg">Entre com suas credenciais</p>
+
+        <form ng-submit="requestLogin()">
+            <div class="form-group has-feedback">
+                <input type="text" ng-model="email" class="form-control" placeholder="Email ou CPF(Apenas números)">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" ng-model="password" class="form-control" placeholder="Senha">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class=" ">
+
+                        <a href="#">Esqueci minha senha</a><br>
+                        <a href="views/register.html" class="text-center">Novo usuário</a>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<div ng-show="appCtl.getShowMain()" class="wrapper">
 
     <!-- Main Header -->
     <header class="main-header">
@@ -200,30 +246,6 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-            <!-- Sidebar user panel (optional) -->
-            <!--<div class="user-panel">-->
-            <!--<div class="pull-left image">-->
-            <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
-            <!--</div>-->
-            <!--<div class="pull-left info">-->
-            <!--<p>Alexander Pierce</p>-->
-            <!--&lt;!&ndash; Status &ndash;&gt;-->
-            <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!-- search form (Optional) -->
-            <!--<form action="#" method="get" class="sidebar-form">-->
-            <!--<div class="input-group">-->
-            <!--<input type="text" name="q" class="form-control" placeholder="Search...">-->
-            <!--<span class="input-group-btn">-->
-            <!--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
-            <!--</button>-->
-            <!--</span>-->
-            <!--</div>-->
-            <!--</form>-->
-            <!-- /.search form -->
-
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MENU PRINCIPAL</li>
@@ -387,10 +409,6 @@
 
                         <div class="box-tools pull-right">
                             <span class="label label-danger">2 Crianças</span>
-                            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                            <!--</button>-->
-                            <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>-->
-                            <!--</button>-->
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -586,9 +604,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script src="plugins/iCheck/icheck.min.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
 </body>
 </html>

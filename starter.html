@@ -33,9 +33,9 @@
 
 </head>
 
-<body ng-controller="appController as appCtl" class="hold-transition skin-blue sidebar-mini" >
+<body ng-controller="appController as appCtl" class="hold-transition skin-blue sidebar-mini">
 
-<div ng-show="appCtl.getShowLogin()" class="login-box">
+<div ng-show="appCtl.getShowLogin()" class="login-box" >
     <div class="login-logo">
         <a href="starter.html"><b>Mc</b>Phee</a>
     </div>
@@ -53,6 +53,7 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
+                <p class="login-box-msg" ng-show="loginMsg">{{loginMsg}}</p>
                 <div class="col-xs-8">
                     <div class=" ">
 
@@ -62,7 +63,9 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                    <button ng-disabled="loading" type="submit" class="btn btn-primary btn-block btn-flat">Entrar
+                        <i ng-show="loading" class="fa fa-refresh fa-spin"></i>
+                    </button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -258,7 +261,8 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="views/school_profile.html"><i class="fa fa-circle-o"></i>E.M Trenzinho triste</a></li>
+                        <li><a href="views/school_profile.html"><i class="fa fa-circle-o"></i>E.M Trenzinho triste</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="treeview">

@@ -29,8 +29,8 @@
     <script type="text/javascript" src="angular_app/app.js"></script>
     <script type="text/javascript" src="angular_app/constants.js"></script>
     <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
-    <script type="text/javascript" src="angular_app/services/mainPage.js"></script>
-    <script type="text/javascript" src="angular_app/controllers/mainHeaderController.js"></script>
+    <script type="text/javascript" src="angular_app/services/treeService.js"></script>
+    <script type="text/javascript" src="angular_app/controllers/treeController.js"></script>
     <script type="text/javascript" src="angular_app/controllers/loginController.js"></script>
 
 </head>
@@ -77,9 +77,9 @@
     <!-- /.login-box-body -->
 </div>
 <div ng-show="appCtl.getShowMain()" class="wrapper">
-
+<div ng-controller="treeController as MhCtl">
     <!-- Main Header -->
-    <header class="main-header" ng-controller="mainHeaderController as MhCtl">
+    <header class="main-header">
 
         <!-- Logo -->
         <a href="index2.html" class="logo">
@@ -267,15 +267,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview" ng-show="shouldShowStudents()">
                     <a href="#"><i class="fa fa-child"></i> <span>Suas Crianças</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="views/student_profile.html"><i class="fa fa-circle-o"></i>Joãozinho</a></li>
-                        <li><a href="views/student_profile.html"><i class="fa fa-circle-o"></i>Mariazinha</a></li>
+                        <li ng-repeat="row in students"><a href="views/student_profile.html"><i class="fa fa-circle-o"></i>{{row.name}}</a></li>
                     </ul>
                 </li>
 
@@ -414,21 +413,17 @@
                         <h3 class="box-title">Suas crianças</h3>
 
                         <div class="box-tools pull-right">
-                            <span class="label label-danger">2 Crianças</span>
+                            <span class="label label-danger">{{students_number}}</span>
                         </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body no-padding">
                         <ul class="users-list clearfix">
-                            <li>
+
+                            <li ng-repeat="row in students">
                                 <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                <a class="users-list-name" href="#">Joãozinho</a>
-                                <span class="users-list-date">Tuma 103 manhã</span>
-                            </li>
-                            <li>
-                                <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                <a class="users-list-name" href="#">Mariazinha</a>
-                                <span class="users-list-date">Turma 205 manhã</span>
+                                <a class="users-list-name" href="#">{{row.name}}</a>
+                                <span class="users-list-date">{{row.class}}</span>
                             </li>
                         </ul>
                         <!-- /.users-list -->
@@ -599,6 +594,7 @@
     <!-- Add the sidebar's background. This div must be placed
     immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
+</div>
 </div>
 <!-- ./wrapper -->
 

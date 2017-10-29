@@ -8,13 +8,37 @@ angular.module('mainApp')
                 $scope.students = treeService.getStudents();
             });
             $scope.shouldShowStudents = function () {
-                num = treeService.getStudentsSize();
-                if (num > 0) {
-                    return true;
-                }
-                else {
+                return treeService.getStudentsSize();
+            };
+
+            $scope.shouldShowSchools = function () {
+                return treeService.getSchoolsSize();
+            };
+
+            $scope.shouldShowAdmin = function () {
+                num = treeService.getPersonPermission();
+                if (num === 4) {
+                    return true
+                } else {
                     return false
                 }
+            };
 
+            $scope.shouldShowManager = function () {
+                num = treeService.getPersonPermission();
+                if (num === 3 || num === 4) {
+                    return true
+                } else {
+                    return false
+                }
+            };
+
+            $scope.shouldShowDaily = function () {
+                num = treeService.getPersonPermission();
+                if (num === 2 || num === 4) {
+                    return true
+                } else {
+                    return false
+                }
             }
         }]);

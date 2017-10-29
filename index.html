@@ -256,14 +256,14 @@
                 <li class="header">MENU PRINCIPAL</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="index.html"><i class="fa fa-globe"></i> <span>Inicio</span></a></li>
-                <li class="treeview">
+                <li class="treeview"  ng-show="shouldShowSchools()">
                     <a href="#"><i class="fa fa-home"></i> <span>Escolas</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="views/school_profile.html"><i class="fa fa-circle-o"></i>E.M Trenzinho triste</a>
+                        <li ng-repeat="row in schools"><a href="views/school_profile.html"><i class="fa fa-circle-o"></i>{{row.school_name}}</a>
                         </li>
                     </ul>
                 </li>
@@ -279,7 +279,7 @@
                 </li>
 
 
-                <li class="treeview">
+                <li class="treeview" ng-show="shouldShowAdmin()">
                     <a href="#"><i class="fa fa-database"></i> <span>Administração</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -292,7 +292,7 @@
                 </li>
 
 
-                <li class="treeview">
+                <li class="treeview"  ng-show="shouldShowManager()">
                     <a href="#"><i class="fa fa-bar-chart"></i> <span>Gestão</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -305,7 +305,7 @@
                     </ul>
                 </li>
 
-                <li class="treeview">
+                <li class="treeview"  ng-show="shouldShowDayli()">
                     <a href="#"><i class="fa fa-newspaper-o"></i> <span>Dia a dia</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>

@@ -1,7 +1,7 @@
 angular.module('mainApp')
     .controller('loginController',
-        ['$http', '$scope', 'showHideService', 'mainPageService', 'BACKEND_API', '$rootScope',
-            function ($http, $scope, showHideService, mainPageService, BACKEND_API, $rootScope) {
+        ['$http', '$scope', 'showHideService', 'treeService', 'BACKEND_API', '$rootScope',
+            function ($http, $scope, showHideService, treeService, BACKEND_API, $rootScope) {
             /*Login screen vars*/
             $scope.email = '';
             $scope.password = '';
@@ -30,7 +30,7 @@ angular.module('mainApp')
                         $scope.loading = false;
                         showHideService.setShowLogin(false);
                         showHideService.setShowMain(true);
-                        mainPageService.setSourceData(response.data);
+                        treeService.setSourceData(response.data);
                         $rootScope.$broadcast('TreeReload')
 
                     }

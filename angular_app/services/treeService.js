@@ -75,5 +75,14 @@ angular.module('mainApp')
 
         this.getPersonPermission = function () {
             return this.source_data["attribute"];
-        }
+        };
+
+        this.getPersonMessages = function () {
+            if (this.source_data["messages"]) {
+                return this.source_data["messages"]
+            } else {
+                return null
+            }
+        };
+
     });

@@ -6,6 +6,8 @@ angular.module('mainApp')
                 $scope.full_name = treeService.getPersonName();
                 $scope.students_number = treeService.getStudentsNumber();
                 $scope.students = treeService.getStudents();
+                $scope.schools = treeService.getSchools();
+                $scope.messages = treeService.getPersonMessages();
             });
             $scope.shouldShowStudents = function () {
                 return treeService.getStudentsSize();

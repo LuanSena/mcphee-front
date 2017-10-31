@@ -349,50 +349,20 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Mensagens recentes</h3>
 
-                    <!--<div class="box-tools pull-right">-->
-                    <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                    <!--</button>-->
-                    <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
-                    <!--</div>-->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <ul class="products-list product-list-in-box">
-                        <li class="item">
+                        <li class="item" ng-repeat="row in messages">
                             <div class="product-img">
                                 <img src="dist/img/default-50x50.gif" alt="Product Image">
                             </div>
                             <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Aluno faltou
-                                    <span class="label label-warning pull-right">04/10/2017</span></a>
+                                <a href="javascript:void(0)" class="product-title">{{row.messageTitle}}
+                                    <span class="label label-info pull-right">{{row.senderName}}</span></a>
+                                <span class="label label-success pull-right">{{row.sendDate}}</span></a>
                                 <span class="product-description">
-                        Aluno <b>joãozinho</b> não compareceu a aula no dia 04/10/2017.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Aluno faleceu<span
-                                        class="label label-danger pull-right">06/06/2006</span></a>
-                                <span class="product-description">
-                          Esquecemos de dar comida e agua e infelizmente o aluno <b>Mariazinha</b> faleceu, iremos lhe dar a <b>Aninha</b> para repor esta perda.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Trabalho entregue
-                                    <span class="label label-success pull-right">10/06/2017</span></a>
-                                <span class="product-description">
-                          O aluno <b>Joãozinho</b> entregou o trabalho corretamente.
+                          {{row.message}}
                         </span>
                             </div>
                         </li>

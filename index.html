@@ -429,36 +429,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                    <td>Joãozinho</td>
+                                <tr ng-repeat="row in diarys">
+                                    <td><a href="pages/examples/invoice.html">{{row.diaryId}}</a></td>
+                                    <td>{{row.studentId}}</td>
                                     <td><span class="label label-success">Normal</span></td>
                                     <td>
-                                        27/10/2017
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                    <td>Mariazinha</td>
-                                    <td><span class="label label-warning">Aviso</span></td>
-                                    <td>
-                                        27/10/2017
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                    <td>Joãozinho</td>
-                                    <td><span class="label label-danger">Incidente</span></td>
-                                    <td>
-                                        26/10/2017
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                    <td>Mariazinha</td>
-                                    <td><span class="label label-success">Normal</span></td>
-                                    <td>
-                                        26/10/2017
+                                        {{row.diaryDate}}
                                     </td>
                                 </tr>
 

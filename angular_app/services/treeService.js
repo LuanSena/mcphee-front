@@ -85,4 +85,20 @@ angular.module('mainApp')
             }
         };
 
+        this.getPersonStudentsDiary = function () {
+            arr = [];
+            if (this.source_data["students"]) {
+                for (i=0; i < this.source_data["students"].length; i++){
+                    if (this.source_data["students"][i]["diarys"]){
+                        arr.push(this.source_data["students"][i]["diarys"]);
+                        console.log(arr);
+                    }
+                }
+                console.log(arr);
+                return arr
+            } else {
+                return null
+            }
+        }
+
     });

@@ -1,15 +1,15 @@
 angular.module('mainApp')
     .service('treeService', function () {
-        this.id = null;
+        this.id = 0;
         this.name = "";
         this.age = 0;
         this.document = 0;
-        this.attribute = null;
-        this.addrressName = null;
-        this.students = null;
-        this.schools = null;
-        this.email = null;
-        this.source_data = null;
+        this.attribute = 0;
+        this.addrressName = 0;
+        this.students = 0;
+        this.schools = 0;
+        this.email = 0;
+        this.source_data = 0;
 
         this.getSourceData = function () {
             return this.source_data;

@@ -87,11 +87,26 @@ angular.module('mainApp')
 
         this.getPersonStudentsDiary = function () {
             arr = [];
+
+
             if (this.source_data["students"]) {
-                for (i=0; i < this.source_data["students"].length; i++){
-                    if (this.source_data["students"][i]["diarys"]){
-                        arr.push(this.source_data["students"][i]["diarys"]);
-                        console.log(arr);
+                var student_len = this.source_data["students"].length;
+
+                for (i=0; i < student_len; i++){
+                    var student = this.source_data["students"][i];
+                    if ("diarys" in student && student["diarys"].length > 0){
+                        var student_diary_count = student["diarys"].length;
+                        console.log(student_diary_count);
+                        for (j=0; j < student_diary_count; j++){
+                            console.log(this.source_data["students"][i]["diarys"][j]);
+                            var diary = this.source_data["students"][i]["diarys"][j];
+                            if (diary === null){
+                                break
+                            }
+                            arr.push(diary);
+                            console.log(arr);
+                        }
+
                     }
                 }
                 console.log(arr);

@@ -96,15 +96,12 @@ angular.module('mainApp')
                     var student = this.source_data["students"][i];
                     if ("diarys" in student && student["diarys"].length > 0){
                         var student_diary_count = student["diarys"].length;
-                        console.log(student_diary_count);
                         for (j=0; j < student_diary_count; j++){
-                            console.log(this.source_data["students"][i]["diarys"][j]);
                             var diary = this.source_data["students"][i]["diarys"][j];
                             if (diary === null){
                                 break
                             }
                             arr.push(diary);
-                            console.log(arr);
                         }
 
                     }

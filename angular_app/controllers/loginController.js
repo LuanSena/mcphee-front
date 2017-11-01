@@ -28,11 +28,11 @@ angular.module('mainApp')
                     if (response.status === 200) {
                         $scope.loginMsg = '';
                         $scope.loading = false;
-                        showHideService.setShowLogin(false);
-                        showHideService.setShowMain(true);
                         treeService.setSourceData(response.data);
-                        $rootScope.$broadcast('TreeReload')
-
+                        $rootScope.$broadcast('TreeReload');
+                        showHideService.setCleanScreen();
+                        showHideService.setShowMenus(true);
+                        showHideService.setShowMain(true);
                     }
                 }, function error(response) {
 

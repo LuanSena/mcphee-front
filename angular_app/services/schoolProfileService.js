@@ -7,37 +7,37 @@ angular.module('mainApp')
         };
 
         this.getSchoolId = function () {
-            return this.source_data["getSchoolId"]
+            return this.source_data["schoolId"]
         };
         this.getFullName = function () {
-            return this.source_data["getFullName"]
+            return this.source_data["fullName"]
         };
         this.getFantasyName = function () {
-            return this.source_data["getFantasyName"]
+            return this.source_data["fantasyName"]
         };
         this.getCreatedAt = function () {
-            return this.source_data["getCreatedAt"]
+            return this.source_data["createdAt"]
         };
         this.getStreet = function () {
-            return this.source_data["getStreet"]
+            return this.source_data["street"]
         };
         this.getEmail = function () {
-            return this.source_data["getEmail"]
+            return this.source_data["email"]
         };
         this.getContact = function () {
-            return this.source_data["getContact"]
+            return this.source_data["contact"]
         };
         this.getDocument = function () {
-            return this.source_data["getDocument"]
+            return this.source_data["document"]
         };
         this.getOwnerName = function () {
-            return this.source_data["getOwnerName"]
+            return this.source_data["ownerName"]
         };
         this.getOwnerAttribute = function () {
-            return this.source_data["getOwnerAttribute"]
+            return this.source_data["ownerAttribute"]
         };
         this.getOwnerContact = function () {
-            return this.source_data["getOwnerContact"]
+            return this.source_data["ownerContact"]
         };
 
     });

@@ -30,9 +30,10 @@
     <script type="text/javascript" src="angular_app/constants.js"></script>
     <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
     <script type="text/javascript" src="angular_app/services/schoolProfileService.js"></script>
+
+    <script type="text/javascript" src="angular_app/controllers/schoolProfileController.js"></script>
     <script type="text/javascript" src="angular_app/services/treeService.js"></script>
     <script type="text/javascript" src="angular_app/controllers/treeController.js"></script>
-    <script type="text/javascript" src="angular_app/controllers/schoolProfileController.js"></script>
     <script type="text/javascript" src="angular_app/controllers/loginController.js"></script>
 
 </head>
@@ -437,8 +438,8 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    {{spc.fantasy_name}}
-                    <small>#{{spc.school_id}}</small>
+                    {{fantasy_ame}}
+                    <small>#{{school_id}}</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -460,8 +461,8 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <h2 class="page-header">
-                            <i class="fa fa-globe"></i>{{spc.full_name}}.
-                            <small class="pull-right">Registro: {{spc.created_at}}</small>
+                            <i class="fa fa-globe"></i>{{full_name}}.
+                            <small class="pull-right">Registro: {{created_at}}</small>
                         </h2>
                     </div>
                     <!-- /.col -->
@@ -471,19 +472,19 @@
                     <div class="col-sm-4 invoice-col">
                         <strong>Informações básicas</strong>
                         <address>
-                            Endereço: R dos bobos, nº 0<br>
-                            Email: contato@trenzinhotriste.com.br<br>
-                            Telefone: (00) 1234-5432<br>
-                            CNPJ: 000.0000.00000-00
+                            Endereço: {{street}}<br>
+                            Email: {{email}}<br>
+                            Telefone: {{contact}}<br>
+                            CNPJ: {{document}}
                         </address>
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-4 invoice-col">
                         Responsável
                         <address>
-                            <strong>Steve Gates</strong><br>
-                            Sócio fundador & administrador<br>
-                            Email: e.gates@trenzinhotriste.com.br
+                            <strong>{{owner_name}}</strong><br>
+                            {{owner_attribute}}<br>
+                            Email: {{owner_contact}}
                         </address>
                     </div>
                     <!-- /.col -->

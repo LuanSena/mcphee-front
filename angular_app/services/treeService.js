@@ -106,7 +106,6 @@ angular.module('mainApp')
 
                     }
                 }
-                console.log(arr);
                 return arr
             } else {
                 return null

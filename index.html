@@ -424,18 +424,18 @@
                                 <tr>
                                     <th>Publicação</th>
                                     <th>Aluno</th>
-                                    <th>Tipo</th>
                                     <th>Data</th>
+                                    <!--<th>#</th>-->
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr ng-repeat="row in diarys">
-                                    <td><a href="pages/examples/invoice.html">{{row.diaryId}}</a></td>
-                                    <td>{{row.studentId}}</td>
-                                    <td><span class="label label-success">Normal</span></td>
-                                    <td>
+                                    <td onClick="alert('ok')">{{row.diaryId}}</td>
+                                    <td onClick="alert('ok')">{{row.studentId}}</td>
+                                    <td onClick="alert('ok')">
                                         {{row.diaryDate}}
                                     </td>
+
                                 </tr>
 
                                 </tbody>

@@ -635,12 +635,11 @@
                         </span>
                                             </li>
 
-                                            <li ng-repeat="row in diarys">
+                                            <li ng-repeat="row in student_diarys">
                                                 <i class="fa fa-envelope bg-blue"></i>
 
                                                 <div class="timeline-item">
-                                                    <span class="time"><i
-                                                            class="fa fa-clock-o"></i> {{row.diary_date}}</span>
+                                                    <span class="time"><i class="fa fa-clock-o"></i> {{row.diary_date}}</span>
 
                                                     <h3 class="timeline-header"><strong>{{row.diary_title}}</strong></h3>
 
@@ -660,11 +659,11 @@
                                     <div class="tab-pane" id="settings">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label for="inputName" class="col-sm-2 control-label">Name</label>
+                                                <label for="inputName" class="col-sm-2 control-label">Titulo</label>
 
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control" id="inputName"
-                                                           placeholder="Name">
+                                                           placeholder="...">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -702,7 +701,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                                    <button type="submit" class="btn btn-danger">Enviar</button>
                                                 </div>
                                             </div>
                                         </form>

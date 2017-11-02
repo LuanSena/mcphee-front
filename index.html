@@ -506,26 +506,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Manhã</td>
-                                <td>07:00</td>
-                                <td>12:00</td>
-                                <td>Sem vagas</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Tarde</td>
-                                <td>13:00</td>
-                                <td>18:00</td>
-                                <td>Sem vagas</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Integral</td>
-                                <td>07:00</td>
-                                <td>18:00</td>
-                                <td>Tem vagas</td>
+                            <tr ng-repeat="row in turns">
+                                <td>{{row.schoolTurnsId}}</td>
+                                <td>{{row.name}}</td>
+                                <td>{{row.startTime}}</td>
+                                <td>{{row.endTime}}</td>
+                                <td>{{row.obs}}</td>
                             </tr>
 
                             </tbody>

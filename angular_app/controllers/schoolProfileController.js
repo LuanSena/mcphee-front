@@ -14,7 +14,7 @@ angular.module('mainApp')
                     $scope.owner_name = schoolProfileService.getOwnerName();
                     $scope.owner_attribute = schoolProfileService.getOwnerAttribute();
                     $scope.owner_contact = schoolProfileService.getOwnerContact();
-                    console.log(schoolProfileService.getFullName())
+                    $scope.turns = schoolProfileService.getTurns();
                 });
 
             }]);

@@ -40,4 +40,7 @@ angular.module('mainApp')
             return this.source_data["ownerContact"]
         };
 
+        this.getTurns = function () {
+            return this.source_data["turns"]
+        };
     });

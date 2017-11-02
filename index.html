@@ -21,7 +21,7 @@
 
     <!-- Google Font -->
     <!--<link rel="stylesheet"-->
-          <!--href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
+    <!--href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
 
     <!--Angular app-->
@@ -40,7 +40,7 @@
 
 <body ng-controller="appController as appCtl" class="hold-transition skin-blue sidebar-mini">
 
-<div ng-show="appCtl.getShowLogin()" class="login-box" >
+<div ng-show="appCtl.getShowLogin()" class="login-box">
     <div class="login-logo">
         <a href="index.html"><b>Mc</b>Phee</a>
     </div>
@@ -80,541 +80,735 @@
     <!-- /.login-box-body -->
 </div>
 <div ng-show="appCtl.getShowMenus()" class="wrapper">
-<div ng-controller="treeController as MhCtl">
-    <!-- Main Header -->
-    <header class="main-header">
+    <div ng-controller="treeController as MhCtl">
+        <!-- Main Header -->
+        <header class="main-header">
 
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Mc</b>Phee</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Mc</b>Phee</span>
-        </a>
-
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>Mc</b>Phee</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Mc</b>Phee</span>
             </a>
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">0</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 0 messages</li>
-                            <li>
-                                <!-- inner menu: contains the messages -->
-                                <ul class="menu">
-                                    <li><!-- start message -->
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <!-- User Image -->
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <!-- Message title and timestamp -->
-                                            <h4>
-                                                Support Team
-                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                            </h4>
-                                            <!-- The message -->
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <!-- end message -->
-                                </ul>
-                                <!-- /.menu -->
-                            </li>
-                            <li class="footer"><a href="#">See All Messages</a></li>
-                        </ul>
-                    </li>
-                    <!-- /.messages-menu -->
 
-                    <!-- Notifications Menu -->
-                    <li class="dropdown notifications-menu">
-                        <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
-                            <li>
-                                <!-- Inner Menu: contains the notifications -->
-                                <ul class="menu">
-                                    <li><!-- start notification -->
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <!-- end notification -->
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">View all</a></li>
-                        </ul>
-                    </li>
-                    <!-- Tasks Menu -->
-                    <li class="dropdown tasks-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="label label-danger">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 9 tasks</li>
-                            <li>
-                                <!-- Inner menu: contains the tasks -->
-                                <ul class="menu">
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <!-- Task title and progress text -->
-                                            <h3>
-                                                Design some buttons
-                                                <small class="pull-right">20%</small>
-                                            </h3>
-                                            <!-- The progress bar -->
-                                            <div class="progress xs">
-                                                <!-- Change the css width attribute to simulate progress -->
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">20% Complete</span>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 0 messages</li>
+                                <li>
+                                    <!-- inner menu: contains the messages -->
+                                    <ul class="menu">
+                                        <li><!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <!-- User Image -->
+                                                    <img src="dist/img/user2-160x160.jpg" class="img-circle"
+                                                         alt="User Image">
                                                 </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">View all tasks</a>
+                                                <!-- Message title and timestamp -->
+                                                <h4>
+                                                    Support Team
+                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <!-- The message -->
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <!-- end message -->
+                                    </ul>
+                                    <!-- /.menu -->
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- /.messages-menu -->
+
+                        <!-- Notifications Menu -->
+                        <li class="dropdown notifications-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <!-- Inner Menu: contains the notifications -->
+                                    <ul class="menu">
+                                        <li><!-- start notification -->
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks Menu -->
+                        <li class="dropdown tasks-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- Inner menu: contains the tasks -->
+                                    <ul class="menu">
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <!-- Task title and progress text -->
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <!-- The progress bar -->
+                                                <div class="progress xs">
+                                                    <!-- Change the css width attribute to simulate progress -->
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                         role="progressbar"
+                                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{name}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        Luan Sena Barbosa
+                                        <small>Member since Nov. 2017</small>
+                                    </p>
+                                </li>
+
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sair</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">MENU PRINCIPAL</li>
+                    <!-- Optionally, you can add icons to the links -->
+                    <li class="active"><a href="#" ng-click="backToStartPage()"><i class="fa fa-globe"></i>
+                        <span>Inicio</span></a></li>
+                    <li class="treeview" ng-show="shouldShowSchools()">
+                        <a href="#"><i class="fa fa-home"></i> <span>Escolas</span>
+                            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li ng-repeat="row in schools"><a href="#" ng-click="requestSchoolById(row.school_id)"><i
+                                    class="fa fa-circle-o"></i>{{row.school_name}}</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">{{name}}</span>
+                    <li class="treeview" ng-show="shouldShowStudents()">
+                        <a href="#"><i class="fa fa-child"></i> <span>Suas Crianças</span>
+                            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <ul class="treeview-menu">
+                            <li ng-repeat="row in students"><a href="views/student_profile.html"><i
+                                    class="fa fa-circle-o"></i>{{row.name}}</a></li>
+                        </ul>
+                    </li>
 
-                                <p>
-                                    Luan Sena Barbosa
-                                    <small>Member since Nov. 2017</small>
-                                </p>
-                            </li>
 
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sair</a>
-                                </div>
-                            </li>
+                    <li class="treeview" ng-show="shouldShowAdmin()">
+                        <a href="#"><i class="fa fa-database"></i> <span>Administração</span>
+                            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="views/schools.html"><i class="fa fa-circle-o"></i>Escolas</a></li>
+                            <li><a href="views/managers.html"><i class="fa fa-circle-o"></i>Gestores</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="treeview" ng-show="shouldShowManager()">
+                        <a href="#"><i class="fa fa-bar-chart"></i> <span>Gestão</span>
+                            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="views/classes.html"><i class="fa fa-circle-o"></i>Turmas</a></li>
+                            <li><a href="views/profs.html"><i class="fa fa-circle-o"></i>Profissionais</a></li>
+                            <li><a href="views/students.html"><i class="fa fa-circle-o"></i>Alunos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview" ng-show="shouldShowDayli()">
+                        <a href="#"><i class="fa fa-newspaper-o"></i> <span>Dia a dia</span>
+                            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>Diário</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>Avisos</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i>Mural</a></li>
                         </ul>
                     </li>
                 </ul>
-            </div>
-        </nav>
-    </header>
-    <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MENU PRINCIPAL</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#" ng-click="backToStartPage()"><i class="fa fa-globe"></i> <span>Inicio</span></a></li>
-                <li class="treeview"  ng-show="shouldShowSchools()">
-                    <a href="#"><i class="fa fa-home"></i> <span>Escolas</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li ng-repeat="row in schools"><a href="#" ng-click="requestSchoolById(row.school_id)"><i class="fa fa-circle-o"></i>{{row.school_name}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="treeview" ng-show="shouldShowStudents()">
-                    <a href="#"><i class="fa fa-child"></i> <span>Suas Crianças</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li ng-repeat="row in students"><a href="views/student_profile.html"><i class="fa fa-circle-o"></i>{{row.name}}</a></li>
-                    </ul>
-                </li>
 
 
-                <li class="treeview" ng-show="shouldShowAdmin()">
-                    <a href="#"><i class="fa fa-database"></i> <span>Administração</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="views/schools.html"><i class="fa fa-circle-o"></i>Escolas</a></li>
-                        <li><a href="views/managers.html"><i class="fa fa-circle-o"></i>Gestores</a></li>
-                    </ul>
-                </li>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
 
+        <div name="StartPage">
+            <div class="content-wrapper" ng-show="appCtl.getShowMain()">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Informações gerais
+                        <!--<small>Versão 0.0.1</small>-->
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+                    </ol>
+                </section>
 
-                <li class="treeview"  ng-show="shouldShowManager()">
-                    <a href="#"><i class="fa fa-bar-chart"></i> <span>Gestão</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="views/classes.html"><i class="fa fa-circle-o"></i>Turmas</a></li>
-                        <li><a href="views/profs.html"><i class="fa fa-circle-o"></i>Profissionais</a></li>
-                        <li><a href="views/students.html"><i class="fa fa-circle-o"></i>Alunos</a></li>
-                    </ul>
-                </li>
+                <!-- Main content -->
+                <section class="content container-fluid">
 
-                <li class="treeview"  ng-show="shouldShowDayli()">
-                    <a href="#"><i class="fa fa-newspaper-o"></i> <span>Dia a dia</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Diário</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Avisos</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Mural</a></li>
-                    </ul>
-                </li>
-            </ul>
+                    <!--------------------------
+                      | Your Page Content Here |
+                      -------------------------->
+                    <!--mensagens recentes-->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Mensagens recentes</h3>
 
-
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
-
-    <div class="content-wrapper" ng-show="appCtl.getShowMain()">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Informações gerais
-                <!--<small>Versão 0.0.1</small>-->
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content container-fluid">
-
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->
-            <!--mensagens recentes-->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Mensagens recentes</h3>
-
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <ul class="products-list product-list-in-box">
-                        <li class="item" ng-repeat="row in messages">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">{{row.messageTitle}}
-                                    <span class="label label-info pull-right">{{row.senderName}}</span></a>
-                                <span class="label label-success pull-right">{{row.sendDate}}</span></a>
-                                <span class="product-description">
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <ul class="products-list product-list-in-box">
+                                <li class="item" ng-repeat="row in messages">
+                                    <div class="product-img">
+                                        <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="javascript:void(0)" class="product-title">{{row.messageTitle}}
+                                            <span class="label label-info pull-right">{{row.senderName}}</span></a>
+                                        <span class="label label-success pull-right">{{row.sendDate}}</span></a>
+                                        <span class="product-description">
                           {{row.message}}
                         </span>
+                                    </div>
+                                </li>
+                                <!-- /.item -->
+                            </ul>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer text-center">
+                            <a href="javascript:void(0)" class="uppercase">Ver todas as mensagens</a>
+                        </div>
+                        <!-- /.box-footer -->
+                    </div>
+
+                    <!--Lista de filhos-->
+                    <div class="col-md-6">
+                        <div class="box box-danger">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Suas crianças</h3>
+
+                                <div class="box-tools pull-right">
+                                    <span class="label label-danger">{{students_number}}</span>
+                                </div>
                             </div>
-                        </li>
-                        <!-- /.item -->
-                    </ul>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer text-center">
-                    <a href="javascript:void(0)" class="uppercase">Ver todas as mensagens</a>
-                </div>
-                <!-- /.box-footer -->
-            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body no-padding">
+                                <ul class="users-list clearfix">
 
-            <!--Lista de filhos-->
-            <div class="col-md-6">
-                <div class="box box-danger">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Suas crianças</h3>
+                                    <li ng-repeat="row in students">
+                                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                                        <a class="users-list-name" href="#">{{row.name}}</a>
+                                        <span class="users-list-date">{{row.class}}</span>
+                                    </li>
+                                </ul>
+                                <!-- /.users-list -->
+                            </div>
+                            <!-- /.box-body -->
+                            <!-- /.box-footer -->
+                        </div>
+                        <!--/.box -->
+                    </div>
 
-                        <div class="box-tools pull-right">
-                            <span class="label label-danger">{{students_number}}</span>
+                    <!--Diários publicados-->
+                    <div class="col-md-6">
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Ultimos diários publicados</h3>
+
+                                <!--<div class="box-tools pull-right">-->
+                                <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
+                                <!--</button>-->
+                                <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
+                                <!--</div>-->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <table class="table no-margin">
+                                        <thead>
+                                        <tr>
+                                            <th>Publicação</th>
+                                            <th>Aluno</th>
+                                            <th>Data</th>
+                                            <!--<th>#</th>-->
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="row in diarys">
+                                            <td onClick="alert('ok')">{{row.diaryId}}</td>
+                                            <td onClick="alert('ok')">{{row.studentName}}</td>
+                                            <td onClick="alert('ok')">
+                                                {{row.diaryDate}}
+                                            </td>
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer clearfix">
+                            </div>
+                            <!-- /.box-footer -->
                         </div>
                     </div>
-                    <!-- /.box-header -->
-                    <div class="box-body no-padding">
-                        <ul class="users-list clearfix">
-
-                            <li ng-repeat="row in students">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                <a class="users-list-name" href="#">{{row.name}}</a>
-                                <span class="users-list-date">{{row.class}}</span>
-                            </li>
-                        </ul>
-                        <!-- /.users-list -->
-                    </div>
-                    <!-- /.box-body -->
-                    <!-- /.box-footer -->
-                </div>
-                <!--/.box -->
+                </section>
+                <!-- /.content -->
             </div>
+        </div>
+        <div name="school-profile" ng-show="appCtl.getShowSchoolProfile()">
+            <div class="content-wrapper" ng-controller="schoolProfileController as spc">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        {{fantasy_ame}}
+                        <small>#{{school_id}}</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                        <li><a href="#">Escolas</a></li>
+                        <li class="active">Perfil</li>
+                    </ol>
+                </section>
 
-            <!--Diários publicados-->
-            <div class="col-md-6">
-                <div class="box box-info">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Ultimos diários publicados</h3>
+                <!--<div class="pad margin no-print">-->
+                <!--<div class="callout callout-info" style="margin-bottom: 0!important;">-->
+                <!--<h4><i class="fa fa-info"></i> Nota:</h4>-->
+                <!--Só sei que nada sei, mas que alguém saberá oque nunca soube.-->
+                <!--</div>-->
+                <!--</div>-->
 
-                        <!--<div class="box-tools pull-right">-->
-                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                        <!--</button>-->
-                        <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
-                        <!--</div>-->
+                <!-- Main content -->
+                <section class="invoice">
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header">
+                                <i class="fa fa-globe"></i>{{full_name}}.
+                                <small class="pull-right">Registro: {{created_at}}</small>
+                            </h2>
+                        </div>
+                        <!-- /.col -->
                     </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="table-responsive">
-                            <table class="table no-margin">
+                    <!-- info row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            <strong>Informações básicas</strong>
+                            <address>
+                                Endereço: {{street}}<br>
+                                Email: {{email}}<br>
+                                Telefone: {{contact}}<br>
+                                CNPJ: {{document}}
+                            </address>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-4 invoice-col">
+                            Responsável
+                            <address>
+                                <strong>{{owner_name}}</strong><br>
+                                {{owner_attribute}}<br>
+                                Email: {{owner_contact}}
+                            </address>
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-xs-12 table-responsive">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Publicação</th>
-                                    <th>Aluno</th>
-                                    <th>Data</th>
-                                    <!--<th>#</th>-->
+                                    <th>*</th>
+                                    <th>Turno</th>
+                                    <th>Entrada</th>
+                                    <th>Saida</th>
+                                    <th>Observações</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr ng-repeat="row in diarys">
-                                    <td onClick="alert('ok')">{{row.diaryId}}</td>
-                                    <td onClick="alert('ok')">{{row.studentName}}</td>
-                                    <td onClick="alert('ok')">
-                                        {{row.diaryDate}}
-                                    </td>
-
+                                <tr ng-repeat="row in turns">
+                                    <td>{{row.schoolTurnsId}}</td>
+                                    <td>{{row.name}}</td>
+                                    <td>{{row.startTime}}</td>
+                                    <td>{{row.endTime}}</td>
+                                    <td>{{row.obs}}</td>
                                 </tr>
 
                                 </tbody>
                             </table>
                         </div>
-                        <!-- /.table-responsive -->
+                        <!-- /.col -->
                     </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer clearfix">
-                    </div>
-                    <!-- /.box-footer -->
-                </div>
+                    <!-- /.row -->
+
+
+                </section>
+                <!-- /.content -->
+                <div class="clearfix"></div>
             </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <div ng-show="appCtl.getShowSchoolProfile()">
-        <div class="content-wrapper" ng-controller="schoolProfileController as spc">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    {{fantasy_ame}}
-                    <small>#{{school_id}}</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-                    <li><a href="#">Escolas</a></li>
-                    <li class="active">Perfil</li>
-                </ol>
-            </section>
-
-            <!--<div class="pad margin no-print">-->
-            <!--<div class="callout callout-info" style="margin-bottom: 0!important;">-->
-            <!--<h4><i class="fa fa-info"></i> Nota:</h4>-->
-            <!--Só sei que nada sei, mas que alguém saberá oque nunca soube.-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!-- Main content -->
-            <section class="invoice">
-                <!-- title row -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header">
-                            <i class="fa fa-globe"></i>{{full_name}}.
-                            <small class="pull-right">Registro: {{created_at}}</small>
-                        </h2>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- info row -->
-                <div class="row invoice-info">
-                    <div class="col-sm-4 invoice-col">
-                        <strong>Informações básicas</strong>
-                        <address>
-                            Endereço: {{street}}<br>
-                            Email: {{email}}<br>
-                            Telefone: {{contact}}<br>
-                            CNPJ: {{document}}
-                        </address>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-4 invoice-col">
-                        Responsável
-                        <address>
-                            <strong>{{owner_name}}</strong><br>
-                            {{owner_attribute}}<br>
-                            Email: {{owner_contact}}
-                        </address>
-                    </div>
-                    <!-- /.col -->
-
-                </div>
-                <!-- /.row -->
-
-                <!-- Table row -->
-                <div class="row">
-                    <div class="col-xs-12 table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>*</th>
-                                <th>Turno</th>
-                                <th>Entrada</th>
-                                <th>Saida</th>
-                                <th>Observações</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="row in turns">
-                                <td>{{row.schoolTurnsId}}</td>
-                                <td>{{row.name}}</td>
-                                <td>{{row.startTime}}</td>
-                                <td>{{row.endTime}}</td>
-                                <td>{{row.obs}}</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-
-
-            </section>
-            <!-- /.content -->
-            <div class="clearfix"></div>
         </div>
-    </div>
+        <div name="student-profile">
+            <div class="content-wrapper" ng-controller="studentProfileController">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Perfil do aluno
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                        <li><a href="#">Alunos</a></li>
+                        <li class="active">Perfil do aluno</li>
+                    </ol>
+                </section>
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Version 0.0.1b
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2017 <a href="#">LSena</a>.</strong>
-    </footer>
+                <!-- Main content -->
+                <section class="content">
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane active" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                    <div class="row">
+                        <div class="col-md-3">
 
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                            <!-- Profile Image -->
+                            <div class="box box-primary">
+                                <div class="box-body box-profile">
+                                    <img class="profile-user-img img-responsive img-circle"
+                                         src="../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-                                <p>Will be 23 on April 24th</p>
+                                    <h3 class="profile-username text-center">{{student_name}}</h3>
+
+                                    <p class="text-muted text-center">{{school_name}}</p>
+
+                                    <ul class="list-group list-group-unbordered">
+                                        <li class="list-group-item">
+                                            <b>Idade</b> <a class="pull-right">{{student_age}}</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Turma</b> <a class="pull-right">{{student_class}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.box-body -->
                             </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
+                            <!-- /.box -->
 
-                <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:;">
-                            <h4 class="control-sidebar-subheading">
-                                Custom Template Design
-                                <span class="pull-right-container">
+                            <!-- About Me Box -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Sobre o aluno</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <strong><i class="fa fa-book margin-r-5"></i> Educação</strong>
+
+                                    <p class="text-muted">
+                                        {{student_grade}}
+                                    </p>
+
+                                    <hr>
+
+                                    <strong><i class="fa fa-map-marker margin-r-5"></i> Nacionalidade</strong>
+
+                                    <p class="text-muted">{{student_nacionality}}</p>
+
+                                    <hr>
+
+                                    <strong><i class="fa fa-pencil margin-r-5"></i> Alimentação</strong>
+
+                                    <p>
+                                        {{student_eating_obs}}
+                                        <!--<span class="label label-danger">Camarão</span>-->
+                                        <!--<span class="label label-success">Agua</span>-->
+                                        <!--<span class="label label-success">Sucos</span>-->
+                                    </p>
+
+                                    <hr>
+
+                                    <strong><i class="fa fa-file-text-o margin-r-5"></i> Notas</strong>
+
+                                    <p>{{student_obs}}</p>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+
+                        <div class="col-md-9">
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#timeline" data-toggle="tab">Atividades</a></li>
+                                    <li><a href="#settings" data-toggle="tab">Adicionar Mensagen</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!-- /.tab-pane -->
+                                    <div class="active tab-pane" id="timeline">
+                                        <!-- The timeline -->
+                                        <ul class="timeline timeline-inverse">
+                                            <!-- timeline time label -->
+                                            <li class="time-label">
+                        <span class="bg-red">
+                          Diarios e mensagens
+                        </span>
+                                            </li>
+
+                                            <li ng-repeat="row in diarys">
+                                                <i class="fa fa-envelope bg-blue"></i>
+
+                                                <div class="timeline-item">
+                                                    <span class="time"><i
+                                                            class="fa fa-clock-o"></i> {{row.diary_date}}</span>
+
+                                                    <h3 class="timeline-header"><strong>{{row.diary_title}}</strong></h3>
+
+                                                    <div class="timeline-body">
+                                                        <p>
+                                                            {{row.diary_text}}
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <!-- /.tab-pane -->
+
+                                    <div class="tab-pane" id="settings">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="email" class="form-control" id="inputName"
+                                                           placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="email" class="form-control" id="inputEmail"
+                                                           placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="inputName"
+                                                           placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputExperience"
+                                                       class="col-sm-2 control-label">Experience</label>
+
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control" id="inputExperience"
+                                                              placeholder="Experience"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="inputSkills"
+                                                           placeholder="Skills">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-content -->
+                            </div>
+                            <!-- /.nav-tabs-custom -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                </section>
+                <!-- /.content -->
+            </div>
+        </div>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                Version 0.0.1b
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2017 <a href="#">LSena</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a>
+                </li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane active" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <h4 class="control-sidebar-subheading">
+                                    Custom Template Design
+                                    <span class="pull-right-container">
                     <span class="label label-danger pull-right">70%</span>
                   </span>
-                            </h4>
+                                </h4>
 
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
 
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
             </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-    immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-</div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
 </div>
 
 <!-- ./wrapper -->

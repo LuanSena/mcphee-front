@@ -4,6 +4,7 @@ angular.module('mainApp')
         this.showMain = false;
         this.showMenus = false;
         this.showSchoolProfile = false;
+        this.showStudentProfile = false;
 
 
         this.getShowLogin = function () {
@@ -38,9 +39,17 @@ angular.module('mainApp')
             return this.showSchoolProfile = param;
         };
 
+        this.getShowStudentProfile = function () {
+            return this.showStudentProfile;
+        };
+
+        this.setShowStudentProfile = function (param) {
+            return this.showStudentProfile = param;
+        };
         this.setCleanScreen = function () {
             this.showLogin = false;
             this.showMain = false;
             this.showSchoolProfile = false;
+            this.showStudentProfile = false;
         }
     });

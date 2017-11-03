@@ -30,8 +30,10 @@
     <script type="text/javascript" src="angular_app/constants.js"></script>
     <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
     <script type="text/javascript" src="angular_app/services/schoolProfileService.js"></script>
+    <script type="text/javascript" src="angular_app/services/studentProfileService.js"></script>
 
     <script type="text/javascript" src="angular_app/controllers/schoolProfileController.js"></script>
+    <script type="text/javascript" src="angular_app/controllers/studentProfileController.js"></script>
     <script type="text/javascript" src="angular_app/services/treeService.js"></script>
     <script type="text/javascript" src="angular_app/controllers/treeController.js"></script>
     <script type="text/javascript" src="angular_app/controllers/loginController.js"></script>
@@ -258,7 +260,7 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li ng-repeat="row in students"><a href="views/student_profile.html"><i
+                            <li ng-repeat="row in students"><a href="#" ng-click="requestStudentById(row.student_id)"><i
                                     class="fa fa-circle-o"></i>{{row.name}}</a></li>
                         </ul>
                     </li>
@@ -368,7 +370,7 @@
                                 <h3 class="box-title">Suas crianças</h3>
 
                                 <div class="box-tools pull-right">
-                                    <span class="label label-danger">{{students_number}}</span>
+                                    <span class="label label-danger">{{students_id}}</span>
                                 </div>
                             </div>
                             <!-- /.box-header -->
@@ -377,8 +379,8 @@
 
                                     <li ng-repeat="row in students">
                                         <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">{{row.name}}</a>
-                                        <span class="users-list-date">{{row.class}}</span>
+                                        <a class="users-list-name" href="#">{{row.student_name}}</a>
+                                        <span class="users-list-date">{{row.student_class}}</span>
                                     </li>
                                 </ul>
                                 <!-- /.users-list -->
@@ -532,8 +534,8 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-        <div name="student-profile">
-            <div class="content-wrapper" ng-controller="studentProfileController">
+        <div name="student-profile" ng-show="appCtl.getShowStudentProfile()">
+            <div class="content-wrapper" ng-controller="studentProfileController as stupCtl">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
@@ -558,16 +560,16 @@
                                     <img class="profile-user-img img-responsive img-circle"
                                          src="../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-                                    <h3 class="profile-username text-center">{{student_name}}</h3>
+                                    <h3 class="profile-username text-center">{{stupCtl.student_name}}</h3>
 
-                                    <p class="text-muted text-center">{{school_name}}</p>
+                                    <p class="text-muted text-center">{{stupCtl.school_name}}</p>
 
                                     <ul class="list-group list-group-unbordered">
                                         <li class="list-group-item">
-                                            <b>Idade</b> <a class="pull-right">{{student_age}}</a>
+                                            <b>Idade</b> <a class="pull-right">{{stupCtl.student_age}}</a>
                                         </li>
                                         <li class="list-group-item">
-                                            <b>Turma</b> <a class="pull-right">{{student_class}}</a>
+                                            <b>Turma</b> <a class="pull-right">{{stupCtl.student_class}}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -585,21 +587,21 @@
                                     <strong><i class="fa fa-book margin-r-5"></i> Educação</strong>
 
                                     <p class="text-muted">
-                                        {{student_grade}}
+                                        {{stupCtl.student_grade}}
                                     </p>
 
                                     <hr>
 
                                     <strong><i class="fa fa-map-marker margin-r-5"></i> Nacionalidade</strong>
 
-                                    <p class="text-muted">{{student_nacionality}}</p>
+                                    <p class="text-muted">{{stupCtl.student_nacionality}}</p>
 
                                     <hr>
 
                                     <strong><i class="fa fa-pencil margin-r-5"></i> Alimentação</strong>
 
                                     <p>
-                                        {{student_eating_obs}}
+                                        {{stupCtl.student_eating_obs}}
                                         <!--<span class="label label-danger">Camarão</span>-->
                                         <!--<span class="label label-success">Agua</span>-->
                                         <!--<span class="label label-success">Sucos</span>-->

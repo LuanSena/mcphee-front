@@ -19,5 +19,9 @@
             return showHideService.getShowSchoolProfile()
         };
 
+        this.getShowStudentProfile = function() {
+            return showHideService.getShowStudentProfile()
+        };
+
     }]);
 })();

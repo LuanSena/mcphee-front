@@ -13,7 +13,7 @@ angular.module('mainApp')
                     $scope.diarys = studentProfileService.getStudentDiarys();
                     $scope.student_obs = studentProfileService.getStudentObs();
                     $scope.student_eating_obs = studentProfileService.getStudentEatingObs();
-                    console.log("StudentProfileReload");
+                    console.log($scope.student_name);
                 });
 
             }]);

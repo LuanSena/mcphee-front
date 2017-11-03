@@ -7,30 +7,30 @@ angular.module('mainApp')
         };
 
         this.getStudentId = function () {
-            return this.source_data["getStudentId"]
+            return this.source_data["studentId"]
         };
         this.getStudentName = function () {
-            return this.source_data["getStudentName"]
+            return this.source_data["name"]
         };
         this.getStudentGrade = function () {
-            return this.source_data["getStudentGrade"]
+            return this.source_data["grade"]
         };
         this.getStudentAge = function () {
-            return this.source_data["getStudentAge"]
+            return this.source_data["age"]
         };
         this.getStudentCreatedAt = function () {
-            return this.source_data["getStudentCreatedAt"]
+            return this.source_data["createdAt"]
         };
         this.getStudentNacionality = function () {
-            return this.source_data["getStudentNacionality"]
+            return this.source_data["nacionality"]
         };
         this.getStudentDiarys = function () {
-            return this.source_data["getStudentDiarys"]
+            return this.source_data["diarys"]
         };
         this.getStudentObs = function () {
             return this.source_data["obs"]
         };
         this.getStudentEatingObs = function () {
-            return this.source_data["getStudentEatingObs"]
+            return this.source_data["eatingObs"]
         };
     });

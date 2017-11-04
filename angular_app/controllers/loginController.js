@@ -42,6 +42,7 @@ angular.module('mainApp')
                         console.log('Fail to login, status:' + response.status);
                     } else {
                         $scope.loginMsg = 'Serviço indisponível, contate o administrador (' + response.status + ')';
+                        $scope.loading = false;
                     }
                 })
             };

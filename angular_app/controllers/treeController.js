@@ -3,7 +3,6 @@ angular.module('mainApp')
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService', 'studentProfileService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService, studentProfileService) {
                 $rootScope.$on('TreeReload', function (event, args) {
-                    console.log("TreeReload");
                     $scope.name = treeService.getPersonName();
                     $scope.full_name = treeService.getPersonName();
                     $scope.students_number = treeService.getStudentsNumber();
@@ -88,7 +87,6 @@ angular.module('mainApp')
                     (function success(response) {
                         if (response.status === 200) {
                             studentProfileService.setSourceData(response.data);
-                            console.log(response.data);
                             $rootScope.$broadcast('StudentProfileReload');
                             showHideService.setCleanScreen();
                             showHideService.setShowStudentProfile(true);

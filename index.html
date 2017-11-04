@@ -27,8 +27,8 @@
     <!--Angular app-->
     <script src="angular_app/angular.min.js"></script>
     <script type="text/javascript" src="angular_app/app.js"></script>
-    <script type="text/javascript" src="angular_app/constants.js"></script>
     <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
+    <script type="text/javascript" src="angular_app/constants.js"></script>
     <script type="text/javascript" src="angular_app/services/schoolProfileService.js"></script>
     <script type="text/javascript" src="angular_app/services/studentProfileService.js"></script>
 
@@ -312,8 +312,8 @@
             <!-- /.sidebar -->
         </aside>
 
-        <div name="StartPage">
-            <div class="content-wrapper" ng-show="appCtl.getShowMain()">
+        <div name="StartPage" ng-show="appCtl.getShowMain()">
+            <div class="content-wrapper" >
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
@@ -379,8 +379,8 @@
 
                                     <li ng-repeat="row in students">
                                         <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">{{row.student_name}}</a>
-                                        <span class="users-list-date">{{row.student_class}}</span>
+                                        <a class="users-list-name" href="#">{{row.name}}</a>
+                                        <span class="users-list-date">{{row.school_name}}</span>
                                     </li>
                                 </ul>
                                 <!-- /.users-list -->
@@ -803,10 +803,6 @@
         <div class="control-sidebar-bg"></div>
     </div>
 </div>
-
-<!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

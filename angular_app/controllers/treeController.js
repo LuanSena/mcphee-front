@@ -4,7 +4,7 @@ angular.module('mainApp')
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService, studentProfileService) {
                 $rootScope.$on('TreeReload', function (event, args) {
                     $scope.name = treeService.getPersonName();
-                    $scope.full_name = treeService.getPersonName();
+                    $scope.full_name = treeService.getPersonFullName();
                     $scope.students_number = treeService.getStudentsNumber();
                     $scope.students = treeService.getStudents();
                     $scope.schools = treeService.getSchools();

@@ -27,6 +27,14 @@ angular.module('mainApp')
             }
         };
 
+        this.getPersonFullName = function () {
+            if (this.source_data["fullName"]) {
+                return this.source_data["fullName"]
+            } else {
+                return "Sem nome"
+            }
+        };
+
         this.getStudents = function () {
             if (this.source_data["students"]) {
                 return this.source_data["students"]

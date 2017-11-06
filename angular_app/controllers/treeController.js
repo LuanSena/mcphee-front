@@ -63,7 +63,6 @@ angular.module('mainApp')
                     (function success(response) {
                         if (response.status === 200) {
                             schoolProfileService.setSourceData(response.data);
-                            console.log(response.data);
                             $rootScope.$broadcast('Luan');
                             showHideService.setCleanScreen();
                             showHideService.setShowSchoolProfile(true);

@@ -5,6 +5,7 @@ angular.module('mainApp')
         this.showMenus = false;
         this.showSchoolProfile = false;
         this.showStudentProfile = false;
+        this.createDiary = false;
 
 
         this.getShowLogin = function () {
@@ -46,10 +47,19 @@ angular.module('mainApp')
         this.setShowStudentProfile = function (param) {
             return this.showStudentProfile = param;
         };
+
+        this.getShowCreateDiary = function () {
+            return this.createDiary;
+        };
+
+        this.setShowCreateDiary = function (param) {
+            this.createDiary = param
+        };
         this.setCleanScreen = function () {
             this.showLogin = false;
             this.showMain = false;
             this.showSchoolProfile = false;
             this.showStudentProfile = false;
+            this.createDiary = false;
         }
     });

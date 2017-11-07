@@ -75,6 +75,28 @@ angular.module('mainApp')
                     })
                 };
 
+                $scope.requestPersonClasses = function () {
+                    $http({
+                        method: 'GET',
+                        url: BACKEND_API + 'v1/person/'+person_id+'/classes',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            $rootScope.$broadcast('getPersonClasses', response.data);
+                            showHideService.setCleanScreen();
+                            showHideService.setShowCreateDiary(true);
+                        }
+                    }, function error(response) {
+
+                        if (response.status === 401) {
+                            console.log('Fail to request school by id, status:' + response.status);
+                        }
+                    })
+                };
+
                 $scope.requestStudentById = function (student_id) {
                     $http({
                         method: 'GET',

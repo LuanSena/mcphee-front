@@ -32,6 +32,7 @@
     <script type="text/javascript" src="angular_app/services/schoolProfileService.js"></script>
     <script type="text/javascript" src="angular_app/services/studentProfileService.js"></script>
 
+    <script type="text/javascript" src="angular_app/controllers/createDiaryController.js"></script>
     <script type="text/javascript" src="angular_app/controllers/schoolProfileController.js"></script>
     <script type="text/javascript" src="angular_app/controllers/studentProfileController.js"></script>
     <script type="text/javascript" src="angular_app/services/treeService.js"></script>
@@ -299,8 +300,8 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Meus alunos</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Lançar diário</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o" ng-click="requestPersonStudents()"></i>Meus alunos</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o" ng-click="requestPersonClasses()"></i>Lançar diário</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -312,7 +313,7 @@
         </aside>
 
         <div name="StartPage" ng-show="appCtl.getShowMain()">
-            <div class="content-wrapper" >
+            <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
@@ -396,13 +397,7 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Ultimos diários publicados</h3>
 
-                                <!--<div class="box-tools pull-right">-->
-                                <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                                <!--</button>-->
-                                <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
-                                <!--</div>-->
                             </div>
-                            <!-- /.box-header -->
                             <div class="box-body">
                                 <div class="table-responsive">
                                     <table class="table no-margin">
@@ -411,7 +406,6 @@
                                             <th>Publicação</th>
                                             <th>Aluno</th>
                                             <th>Data</th>
-                                            <!--<th>#</th>-->
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -427,16 +421,12 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- /.table-responsive -->
                             </div>
-                            <!-- /.box-body -->
                             <div class="box-footer clearfix">
                             </div>
-                            <!-- /.box-footer -->
                         </div>
                     </div>
                 </section>
-                <!-- /.content -->
             </div>
         </div>
         <div name="school-profile" ng-show="appCtl.getShowSchoolProfile()">
@@ -632,7 +622,8 @@
                                                 <i class="fa fa-envelope bg-blue"></i>
 
                                                 <div class="timeline-item">
-                                                    <span class="time"><i class="fa fa-clock-o"></i> {{row.diaryDate}}</span>
+                                                    <span class="time"><i
+                                                            class="fa fa-clock-o"></i> {{row.diaryDate}}</span>
 
                                                     <h3 class="timeline-header"><strong>{{row.title}}</strong></h3>
 
@@ -713,13 +704,11 @@
                 <!-- /.content -->
             </div>
         </div>
-        <div name="create-diary">
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
+        <div name="create-diary" ng-show="appCtl.getShowCreateDiary()">
+            <div class="content-wrapper" ng-controller="createDiaryController">
                 <section class="content-header">
                     <h1>
                         Diário
-
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -740,18 +729,9 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label>Turma</label>
-                                        <select class="form-control select2" style="width: 100%;">
-                                            <option selected="selected">Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>California</option>
-                                            <option>Delaware</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option>Washington</option>
+                                        <select class="form-control select2" style="width: 100%;" ng-model="class_id">
+                                            <option ng-repeat="row in classes" value="{{row.class_id}}">{{row.class_name}}</option>
                                         </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <!--<input class="form-control" placeholder="Subject:">-->
                                     </div>
                                     <div class="form-group">
                     <textarea id="compose-textarea" class="form-control" style="height: 300px">
@@ -761,7 +741,8 @@
                                     <!-- /.box-body -->
                                     <div class="box-footer">
                                         <div class="pull-right">
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> ENVIAR
+                                            <button type="submit" class="btn btn-primary" ng-submit="postClassDiary()"><i
+                                                    class="fa fa-envelope-o"></i> ENVIAR
                                             </button>
                                         </div>
                                     </div>
@@ -868,7 +849,7 @@
 <script src="dist/js/adminlte.min.js"></script>
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 <script>
     $(function () {
         //Add text editor

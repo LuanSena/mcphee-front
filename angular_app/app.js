@@ -23,5 +23,9 @@
             return showHideService.getShowStudentProfile()
         };
 
+        this.getShowCreateDiary = function() {
+            return showHideService.getShowCreateDiary()
+        };
+
     }]);
 })();

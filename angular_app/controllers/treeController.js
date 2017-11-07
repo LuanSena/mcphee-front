@@ -3,6 +3,7 @@ angular.module('mainApp')
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService', 'studentProfileService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService, studentProfileService) {
                 $rootScope.$on('TreeReload', function (event, args) {
+                    $scope.person_id = treeService.getPersonId();
                     $scope.name = treeService.getPersonName();
                     $scope.full_name = treeService.getPersonFullName();
                     $scope.students_number = treeService.getStudentsNumber();
@@ -78,7 +79,7 @@ angular.module('mainApp')
                 $scope.requestPersonClasses = function () {
                     $http({
                         method: 'GET',
-                        url: BACKEND_API + 'v1/person/'+person_id+'/classes',
+                        url: BACKEND_API + 'v1/person/'+$scope.person_id+'/classes',
                         headers: {
                             'Content-Type': 'application/json'
                         }

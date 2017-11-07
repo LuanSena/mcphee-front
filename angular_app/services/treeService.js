@@ -43,6 +43,14 @@ angular.module('mainApp')
             }
         };
 
+        this.getPersonId = function () {
+            if (this.source_data["id"]) {
+                return this.source_data["id"]
+            } else {
+                return null
+            }
+        };
+
         this.getStudentsNumber = function () {
             if (this.source_data["students"]) {
                 num = this.source_data["students"].length;

@@ -627,10 +627,8 @@
 
                                                     <h3 class="timeline-header"><strong>{{row.title}}</strong></h3>
 
-                                                    <div class="timeline-body">
-                                                        <p>
-                                                            {{row.diaryText}}
-                                                        </p>
+                                                    <div class="timeline-body" style="white-space: pre-line">
+                                                        <p>{{row.diaryText}}</p>
                                                     </div>
 
                                                 </div>
@@ -728,20 +726,20 @@
                                 <!-- /.box-header -->
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label>Turma selecionada:{{selected_class_id}}</label>
-                                        <select class="form-control select2" style="width: 100%;" ng-model="selected_class_id">
+                                        <label>Turma:</label>
+                                        <select class="form-control select2" style="width: 100%;" ng-model="diary.selected">
                                             <option ng-repeat="row in classes" value="{{row.classId}}">{{row.className}} - {{row.schoolFantasyName}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                    <textarea id="compose-textarea" class="form-control" ng-model="diary_text" style="height: 300px">
-                      {{diary_text}}
+                    <textarea id="" class="form-control" ng-model="diary.text"  style="height: 300px; white-space:pre;">
+                      {{diary.text}}
                     </textarea>
                                     </div>
                                     <!-- /.box-body -->
                                     <div class="box-footer">
                                         <div class="pull-right">
-                                            <button class="btn btn-primary" ng-click="postClassDiary(selected_class_id)"><i
+                                            <button class="btn btn-primary" ng-click="postClassDiary(diary.selected, diary.text)"><i
                                                     class="fa fa-envelope-o"></i> ENVIAR
                                             </button>
                                         </div>

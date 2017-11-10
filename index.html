@@ -520,7 +520,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Perfil do aluno {{student_id}}
+                        Perfil do aluno
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -603,8 +603,8 @@
                         <div class="col-md-9">
                             <div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#timeline" data-toggle="tab">Atividades</a></li>
-                                    <li><a href="#settings" data-toggle="tab">Adicionar Mensagen</a></li>
+                                    <li class="active"><a href="#timeline" data-toggle="tab">Diários</a></li>
+                                    <li><a href="#settings" data-toggle="tab">Adicionar diário</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <!-- /.tab-pane -->
@@ -614,7 +614,7 @@
                                             <!-- timeline time label -->
                                             <li class="time-label">
                         <span class="bg-red">
-                          Diarios e mensagens
+                          Diários e mensagens
                         </span>
                                             </li>
 
@@ -638,52 +638,32 @@
                                     </div>
                                     <!-- /.tab-pane -->
 
-                                    <div class="tab-pane" id="settings">
+                                    <div class="tab-pane" name="student-diary-post" id="settings">
                                         <form class="form-horizontal">
                                             <div class="form-group">
                                                 <label for="inputName" class="col-sm-2 control-label">Titulo</label>
 
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputName"
-                                                           placeholder="...">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputEmail"
-                                                           placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                                <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputName"
-                                                           placeholder="Name">
+                                                           ng-model="diary_stu.title">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
                                                 <label for="inputExperience"
-                                                       class="col-sm-2 control-label">Experience</label>
+                                                       class="col-sm-2 control-label">Mensagem</label>
 
                                                 <div class="col-sm-10">
                                                     <textarea class="form-control" id="inputExperience"
-                                                              placeholder="Experience"></textarea>
+                                                              ng-model="diary_stu.text"></textarea>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
 
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputSkills"
-                                                           placeholder="Skills">
-                                                </div>
-                                            </div>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-danger">Enviar</button>
+                                                    <button class="btn btn-primary" ng-click="postStudentDiary()"><i
+                                                            class="fa fa-envelope-o"></i> ENVIAR
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>

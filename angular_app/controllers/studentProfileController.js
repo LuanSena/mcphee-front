@@ -15,6 +15,39 @@ angular.module('mainApp')
                     $scope.student_eating_obs = studentProfileService.getStudentEatingObs();
 
                 });
+                $scope.diary_stu = {
+                    text: '...',
+                    title: '...'
+                };
+                $scope.postStudentDiary = function () {
+                    if ($scope.diary_stu.text !== '...') {
+                        $http({
+                            method: 'POST',
+                            url: BACKEND_API + 'v1/diary/student/' + $scope.student_id,
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            data: {
+                                'diaryText': $scope.diary_stu.text,
+                                'diaryTitle': $scope.diary_stu.title
+                            }
+                        }).then
+                        (function success(response) {
+                            if (response.status === 202) {
+                                $scope.diary_stu.text = '';
+                                $scope.diary_stu.title = '';
+                                alert("Diário publicado com sucesso!")
+                            }
+                        }, function error(response) {
+                            console.log(response);
+                            alert("Ocorreu um erro a o publicar o diário");
+                        })
+                    }
+                    else {
+                        alert("É necessário digitar um texto")
+                    }
+                };
+
 
             }]);
 

@@ -1,4 +1,4 @@
-Introduction
+McPhee Front-end project
 ============
 
 ![Bower version](https://img.shields.io/bower/v/adminlte.svg)

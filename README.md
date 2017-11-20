@@ -1,4 +1,4 @@
-Introduction
+McPhee Front-end project
 ============
 
 ![Bower version](https://img.shields.io/bower/v/adminlte.svg)
@@ -24,7 +24,7 @@ Contribution are always **welcome and recommended**! Here is how:
 
 - Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
 - Clone to your machine ```git clone https://github.com/YOUR_USERNAME/AdminLTE.git```
-- Make your changes
+- Make your changes,
 - Create a pull request
 
 #### Contribution Requirements:

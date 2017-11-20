@@ -274,7 +274,7 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="views/schools.html"><i class="fa fa-circle-o"></i>Escolas</a></li>
+                            <li><a href="#" ng-click="requestSchoolList()"><i class="fa fa-circle-o"></i>Escolas</a></li>
                             <li><a href="views/managers.html"><i class="fa fa-circle-o"></i>Gestores</a></li>
                         </ul>
                     </li>
@@ -300,8 +300,10 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#" ng-click="requestPersonStudents()"><i class="fa fa-circle-o"></i>Meus alunos</a></li>
-                            <li><a href="#" ng-click="requestPersonClasses()"><i class="fa fa-circle-o" ></i>Lançar diário</a></li>
+                            <li><a href="#" ng-click="requestPersonStudents()"><i class="fa fa-circle-o"></i>Meus alunos</a>
+                            </li>
+                            <li><a href="#" ng-click="requestPersonClasses()"><i class="fa fa-circle-o"></i>Lançar
+                                diário</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -707,19 +709,23 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label>Turma:</label>
-                                        <select class="form-control select2" style="width: 100%;" ng-model="diary.selected">
-                                            <option ng-repeat="row in classes" value="{{row.classId}}">{{row.className}} - {{row.schoolFantasyName}}</option>
+                                        <select class="form-control select2" style="width: 100%;"
+                                                ng-model="diary.selected">
+                                            <option ng-repeat="row in classes" value="{{row.classId}}">{{row.className}}
+                                                - {{row.schoolFantasyName}}
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                    <textarea id="" class="form-control" ng-model="diary.text"  style="height: 300px; white-space:pre;">
+                    <textarea id="" class="form-control" ng-model="diary.text" style="height: 300px; white-space:pre;">
                       {{diary.text}}
                     </textarea>
                                     </div>
                                     <!-- /.box-body -->
                                     <div class="box-footer">
                                         <div class="pull-right">
-                                            <button class="btn btn-primary" ng-click="postClassDiary(diary.selected, diary.text)"><i
+                                            <button class="btn btn-primary"
+                                                    ng-click="postClassDiary(diary.selected, diary.text)"><i
                                                     class="fa fa-envelope-o"></i> ENVIAR
                                             </button>
                                         </div>
@@ -729,6 +735,109 @@
                         </div>
                     </div>
 
+                </section>
+            </div>
+        </div>
+        <div name="school-crud" ng-show="appCtl.getShowSchoolList()">
+            <div class="content-wrapper" ng-controller="schoolListController as sllc">
+                <section class="content-header">
+                    <h1>
+                        Escolas
+                        <small>Listagem e administração</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                        <li><a href="#">administração</a></li>
+                        <li class="active">escolas</li>
+                    </ol>
+                </section>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div name="crud" ng-show="showSchoolListCrud" class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Incluir/Alterar escola</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>Razão social</label>
+                                            <input type="text" ng-model="sfull_name" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nome fantasia</label>
+                                            <input type="text" ng-model="fantasy_name" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Endereço</label>
+                                            <input type="text" ng-model="address" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" ng-model="email" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>contato</label>
+                                            <input type="text" ng-model="contact" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>CNPJ</label>
+                                            <input type="text" ng-model="document" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nome do responsável</label>
+                                            <input type="text" ng-model="owner_name" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Cargo do responsável</label>
+                                            <input type="text" ng-model="owner_attribute" class="form-control" placeholder="...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contato do responsável</label>
+                                            <input type="text" ng-model="owner_contact" class="form-control" placeholder="...">
+                                        </div>
+                                    </div>
+                                    <!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button class="btn btn-primary" ng-click="postSchool()">Enviar</button>
+                                        <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="box">
+                                <div class="box-body">
+                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud" ng-click="showSchoolListCrud = true">Adicionar Nova</button>
+                                    <table id="example2" class="table table-bordered table-striped">
+
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>CNPJ</th>
+                                            <th>Nome</th>
+                                            <th>Contato</th>
+                                            <th>Responsável</th>
+                                            <th>Contato do responsável</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="row in schools">
+                                            <td>{{row.schoolId}}</td>
+                                            <td>{{row.document}}</td>
+                                            <td>{{row.fantasyName}}</td>
+                                            <td>{{row.contact}}</td>
+                                            <td>{{row.ownerName}}</td>
+                                            <td>{{row.ownerContact}}</td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>

@@ -19,6 +19,10 @@
             return showHideService.getShowSchoolProfile()
         };
 
+        this.getShowSchoolList = function() {
+            return showHideService.getShowSchoolList()
+        };
+
         this.getShowStudentProfile = function() {
             return showHideService.getShowStudentProfile()
         };

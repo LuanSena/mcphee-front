@@ -4,6 +4,7 @@ angular.module('mainApp')
         this.showMain = false;
         this.showMenus = false;
         this.showSchoolProfile = false;
+        this.showSchoolList = false;
         this.showStudentProfile = false;
         this.createDiary = false;
 
@@ -55,11 +56,20 @@ angular.module('mainApp')
         this.setShowCreateDiary = function (param) {
             this.createDiary = param
         };
+
+        this.getShowSchoolList = function () {
+            return this.showSchoolList;
+        };
+
+        this.setShowSchoolList = function (param) {
+            return this.showSchoolList = param;
+        };
         this.setCleanScreen = function () {
             this.showLogin = false;
             this.showMain = false;
             this.showSchoolProfile = false;
             this.showStudentProfile = false;
             this.createDiary = false;
+            this.showSchoolList = false;
         }
     });

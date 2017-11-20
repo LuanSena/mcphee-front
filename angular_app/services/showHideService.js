@@ -8,6 +8,13 @@ angular.module('mainApp')
         this.showStudentProfile = false;
         this.createDiary = false;
 
+        this.showManagerlList = false;
+        this.showClasslList = false;
+        this.showProflList = false;
+        this.showStudentList = false;
+
+
+
 
         this.getShowLogin = function () {
             return this.showLogin;

@@ -76,6 +76,29 @@ angular.module('mainApp')
                     })
                 };
 
+                $scope.requestManagersList = function () {
+                    $http({
+                        method: 'GET',
+                        url: BACKEND_API + 'v1/person/managers',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            // schoolProfileService.setSourceData(response.data);
+                            $rootScope.$broadcast('ManagersListLoad', response.data);
+                            showHideService.setCleanScreen();
+                            showHideService.setShowManagerList(true);
+                        }
+                    }, function error(response) {
+
+                        if (response.status === 401) {
+                            console.log('Fail to request school by id, status:' + response.status);
+                        }
+                    })
+                };
+
                 $scope.requestSchoolById = function (school_id) {
                     $http({
                         method: 'GET',

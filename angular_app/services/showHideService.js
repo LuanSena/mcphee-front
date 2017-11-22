@@ -8,9 +8,9 @@ angular.module('mainApp')
         this.showStudentProfile = false;
         this.createDiary = false;
 
-        this.showManagerlList = false;
-        this.showClasslList = false;
-        this.showProflList = false;
+        this.showManagerList = false;
+        this.showClassList = false;
+        this.showProfList = false;
         this.showStudentList = false;
 
 
@@ -71,6 +71,41 @@ angular.module('mainApp')
         this.setShowSchoolList = function (param) {
             return this.showSchoolList = param;
         };
+
+
+
+        this.getShowManagerList = function () {
+            return this.showManagerList;
+        };
+
+        this.setShowManagerList = function (param) {
+            return this.showManagerList = param;
+        };
+
+
+        this.getShowClassList = function () {
+            return this.showClassList;
+        };
+
+        this.setShowClassList = function (param) {
+            return this.showClassList = param;
+        };
+
+        this.getShowProfList = function () {
+            return this.showProfList;
+        };
+
+        this.setShowProfList = function (param) {
+            return this.showProfList = param;
+        };
+
+        this.getShowStudentList = function () {
+            return this.showStudentList;
+        };
+
+        this.setShowStudentList = function (param) {
+            return this.showStudentList = param;
+        };
         this.setCleanScreen = function () {
             this.showLogin = false;
             this.showMain = false;
@@ -78,5 +113,10 @@ angular.module('mainApp')
             this.showStudentProfile = false;
             this.createDiary = false;
             this.showSchoolList = false;
+
+            this.showManagerList = false;
+            this.showClassList = false;
+            this.showProfList = false;
+            this.showStudentList = false;
         }
     });

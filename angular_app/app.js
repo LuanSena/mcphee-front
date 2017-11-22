@@ -31,5 +31,18 @@
             return showHideService.getShowCreateDiary()
         };
 
+        this.getShowManagerList = function() {
+            return showHideService.getShowManagerList()
+        };
+        this.getShowClassList = function() {
+            return showHideService.getShowClassList()
+        };
+        this.getShowProfList = function() {
+            return showHideService.getShowProfList()
+        };
+        this.getShowStudentList = function() {
+            return showHideService.getShowStudentList()
+        };
+
     }]);
 })();

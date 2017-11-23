@@ -288,8 +288,8 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="views/classes.html"><i class="fa fa-circle-o"></i>Turmas</a></li>
-                            <li><a href="views/profs.html"><i class="fa fa-circle-o"></i>Profissionais</a></li>
+                            <li><a href="#" ng-click="requestClassesList()"><i class="fa fa-circle-o"></i>Turmas</a></li>
+                            <li><a href="#" ng-click="requestProfList()"><i class="fa fa-circle-o"></i>Profissionais</a></li>
                             <li><a href="views/students.html"><i class="fa fa-circle-o"></i>Alunos</a></li>
                         </ul>
                     </li>
@@ -919,97 +919,57 @@
             </div>
         </div>
         <div name="class-crud" ng-show="appCtl.getShowClassList()">
-            <div class="content-wrapper" ng-controller="schoolListController as sllc">
+            <div class="content-wrapper" ng-controller="classListController as sllc">
                 <section class="content-header">
                     <h1>
-                        Escolas
+                        Classes
                         <small>Listagem e administração</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
                         <li><a href="#">administração</a></li>
-                        <li class="active">escolas</li>
+                        <li class="active">classes</li>
                     </ol>
                 </section>
                 <section class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div name="crud" ng-show="showSchoolListCrud" class="box box-primary">
+                            <div name="crud" ng-show="showClassListCrud" class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Incluir/Alterar escola</h3>
+                                    <h3 class="box-title">Incluir/Alterar classe</h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <!-- form start -->
                                 <form role="form">
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label>Razão social</label>
+                                            <label>Nome da classe</label>
                                             <input type="text" ng-model="sfull_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nome fantasia</label>
-                                            <input type="text" ng-model="fantasy_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Endereço</label>
-                                            <input type="text" ng-model="address" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="text" ng-model="email" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>contato</label>
-                                            <input type="text" ng-model="contact" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>CNPJ</label>
-                                            <input type="text" ng-model="document" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nome do responsável</label>
-                                            <input type="text" ng-model="owner_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Cargo do responsável</label>
-                                            <input type="text" ng-model="owner_attribute" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Contato do responsável</label>
-                                            <input type="text" ng-model="owner_contact" class="form-control" placeholder="...">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postSchool()">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary" ng-click="postClass()">Enviar</button>
+                                        <button class="btn btn-danger" ng-click="showClassListCrud = false">Cancelar</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud" ng-click="showSchoolListCrud = true">Adicionar Nova</button>
-                                    <table id="example2" class="table table-bordered table-striped">
+                                    <button class="btn btn-primary" ng-show="!showclassListCrud" ng-click="showclassListCrud = true">Adicionar Nova</button>
+                                    <table id="" class="table table-bordered table-striped">
 
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>CNPJ</th>
-                                            <th>Nome</th>
-                                            <th>Contato</th>
-                                            <th>Responsável</th>
-                                            <th>Contato do responsável</th>
+                                            <th>Nome da Turma</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="row in schools">
-                                            <td>{{row.schoolId}}</td>
-                                            <td>{{row.document}}</td>
-                                            <td>{{row.fantasyName}}</td>
-                                            <td>{{row.contact}}</td>
-                                            <td>{{row.ownerName}}</td>
-                                            <td>{{row.ownerContact}}</td>
+                                        <tr ng-repeat="row in classes">
+                                            <td>{{row.classId}}</td>
+                                            <td>{{row.className}}</td>
                                         </tr>
                                         </tbody>
                                         <tfoot>
@@ -1025,94 +985,60 @@
             <div class="content-wrapper" ng-controller="schoolListController as sllc">
                 <section class="content-header">
                     <h1>
-                        Escolas
+                        Profissionais
                         <small>Listagem e administração</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
                         <li><a href="#">administração</a></li>
-                        <li class="active">escolas</li>
+                        <li class="active">Profissionais</li>
                     </ol>
                 </section>
                 <section class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div name="crud" ng-show="showSchoolListCrud" class="box box-primary">
+                            <div name="crud" ng-show="showProfListCrud" class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Incluir/Alterar escola</h3>
+                                    <h3 class="box-title">Incluir/Alterar Profissionais</h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <!-- form start -->
                                 <form role="form">
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label>Razão social</label>
+                                            <label>Profissional</label>
                                             <input type="text" ng-model="sfull_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nome fantasia</label>
-                                            <input type="text" ng-model="fantasy_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Endereço</label>
-                                            <input type="text" ng-model="address" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="text" ng-model="email" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>contato</label>
-                                            <input type="text" ng-model="contact" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>CNPJ</label>
-                                            <input type="text" ng-model="document" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nome do responsável</label>
-                                            <input type="text" ng-model="owner_name" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Cargo do responsável</label>
-                                            <input type="text" ng-model="owner_attribute" class="form-control" placeholder="...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Contato do responsável</label>
-                                            <input type="text" ng-model="owner_contact" class="form-control" placeholder="...">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
                                         <button class="btn btn-primary" ng-click="postSchool()">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar</button>
+                                        <button class="btn btn-danger" ng-click="showProfListCrud = false">Cancelar</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud" ng-click="showSchoolListCrud = true">Adicionar Nova</button>
-                                    <table id="example2" class="table table-bordered table-striped">
+                                    <button class="btn btn-primary" ng-show="!showProfListCrud" ng-click="showProfListCrud = true">Adicionar Nova</button>
+                                    <table id="" class="table table-bordered table-striped">
 
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>CNPJ</th>
                                             <th>Nome</th>
+                                            <th>Documento</th>
                                             <th>Contato</th>
-                                            <th>Responsável</th>
-                                            <th>Contato do responsável</th>
+                                            <th>Email</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="row in schools">
-                                            <td>{{row.schoolId}}</td>
-                                            <td>{{row.document}}</td>
-                                            <td>{{row.fantasyName}}</td>
-                                            <td>{{row.contact}}</td>
-                                            <td>{{row.ownerName}}</td>
-                                            <td>{{row.ownerContact}}</td>
+                                        <tr ng-repeat="row in profs">
+                                            <td>{{row.personId}}</td>
+                                            <td>{{row.personName}}</td>
+                                            <td>{{row.personDocument}}</td>
+                                            <td>{{row.personContact}}</td>
+                                            <td>{{row.personEmail}}</td>
                                         </tr>
                                         </tbody>
                                         <tfoot>

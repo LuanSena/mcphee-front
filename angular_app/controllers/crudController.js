@@ -78,55 +78,38 @@ angular.module('mainApp')
     .controller('classListController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.sfull_name = '';
-                $scope.fantasy_name = '';
-                $scope.address = '';
-                $scope.email = '';
-                $scope.contact = '';
-                $scope.document = '';
-                $scope.owner_name = '';
-                $scope.owner_attribute = '';
-                $scope.owner_contact = '';
-                $scope.showSchoolListCrud = true;
-                $scope.schools = [];
-                $rootScope.$on('SchoolListLoad', function (event, args) {
-                    $scope.showSchoolListCrud = false;
+                $scope.classId = '';
+                $scope.className = '';
+                $scope.showClassListCrud = false;
+                $scope.classes = [];
+                $rootScope.$on('ClassListLoad', function (event, args) {
                     if (args !== null) {
-                        $scope.schools = args;
+                        $scope.classes = args;
                     }
 
                 });
-                $scope.postSchool = function () {
+                $scope.postClass = function () {
                     $scope.showSchoolListCrud = false;
                     console.log($scope.showSchoolListCrud);
                     $http({
                         method: 'POST',
-                        url: BACKEND_API + 'v1/school',
+                        url: BACKEND_API + 'v1/classes/'+$scope.class_school_id,
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'fullName': $scope.sfull_name,
-                            'fantasyName': $scope.fantasy_name,
-                            'address': $scope.address,
-                            'email': $scope.email,
-                            'contact': $scope.contact,
-                            'document': $scope.document,
-                            'ownerName': $scope.owner_name,
-                            'ownerAttribute': $scope.owner_attribute,
-                            'ownerContact': $scope.owner_contact
+                            'schoolId': $scope.sfull_name,
+                            'className': $scope.fantasy_name
                         }
                     }).then
                     (function success(response) {
                         if (response.status === 202) {
-                            $scope.diary_stu.text = '';
-                            $scope.diary_stu.title = '';
-                            alert("Diário publicado com sucesso!")
+                            alert("Classe cadastrada com sucesso!")
                         }
                     }, function error(response) {
-                        $rootScope.$broadcast('SchoolListLoad');
+                        // $rootScope.$broadcast('SchoolListLoad');
                         console.log(response);
-                        alert("Cadastrado com sucesso!");
+                        alert("Vish! check the console logs");
                     })
 
                 };
@@ -137,21 +120,16 @@ angular.module('mainApp')
     .controller('profListController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.sfull_name = '';
-                $scope.fantasy_name = '';
-                $scope.address = '';
-                $scope.email = '';
-                $scope.contact = '';
-                $scope.document = '';
-                $scope.owner_name = '';
-                $scope.owner_attribute = '';
-                $scope.owner_contact = '';
-                $scope.showSchoolListCrud = true;
-                $scope.schools = [];
-                $rootScope.$on('SchoolListLoad', function (event, args) {
-                    $scope.showSchoolListCrud = false;
+                $scope.prof_full_name = '';
+                $scope.prof_document = '';
+                $scope.prof_contact = '';
+                $scope.prof_school_id = '';
+                $scope.prof_school_name = '';
+                $scope.profs = [];
+                $scope.showProfListCrud = false;
+                $rootScope.$on('ProfListLoad', function (event, args) {
                     if (args !== null) {
-                        $scope.schools = args;
+                        $scope.profs = args;
                     }
 
                 });

@@ -250,7 +250,7 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li ng-repeat="row in schools"><a href="#" ng-click="requestSchoolById(row.school_id)"><i
+                            <li ng-repeat="row in profile_schools"><a href="#" ng-click="requestSchoolById(row.school_id)"><i
                                     class="fa fa-circle-o"></i>{{row.school_name}}</a>
                             </li>
                         </ul>
@@ -982,7 +982,7 @@
             </div>
         </div>
         <div name="prof-crud" ng-show="appCtl.getShowProfList()">
-            <div class="content-wrapper" ng-controller="schoolListController as sllc">
+            <div class="content-wrapper" ng-controller="profListController as sllc">
                 <section class="content-header">
                     <h1>
                         Profissionais

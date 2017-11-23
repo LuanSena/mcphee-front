@@ -127,8 +127,9 @@ angular.module('mainApp')
                 $scope.prof_school_name = '';
                 $scope.profs = [];
                 $scope.showProfListCrud = false;
-                $rootScope.$on('ProfListLoad', function (event, args) {
+                $rootScope.$on('profListLoad', function (event, args) {
                     if (args !== null) {
+                        console.log('On: ProfListLoad');
                         $scope.profs = args;
                     }
 

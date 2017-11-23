@@ -8,7 +8,7 @@ angular.module('mainApp')
                     $scope.full_name = treeService.getPersonFullName();
                     $scope.students_number = treeService.getStudentsNumber();
                     $scope.students = treeService.getStudents();
-                    $scope.schools = treeService.getSchools();
+                    $scope.profile_schools = treeService.getSchools();
                     $scope.messages = treeService.getPersonMessages();
                     $scope.diarys = treeService.getPersonStudentsDiary();
                 });
@@ -63,7 +63,7 @@ angular.module('mainApp')
                     }).then
                     (function success(response) {
                         if (response.status === 200) {
-                            schoolProfileService.setSourceData(response.data);
+                            // schoolProfileService.setSourceData(response.data);
                             $rootScope.$broadcast('SchoolListLoad', response.data);
                             showHideService.setCleanScreen();
                             showHideService.setShowSchoolList(true);
@@ -100,17 +100,15 @@ angular.module('mainApp')
                 };
 
                 $scope.requestClassesList = function () {
-                    // console.log('v1/classes/'+$scope.schools[0]["school_id"]);
                     $http({
                         method: 'GET',
-                        url: BACKEND_API + 'v1/class/'+$scope.schools[0]["school_id"],
+                        url: BACKEND_API + 'v1/class/'+$scope.profile_schools[0]["school_id"],
                         headers: {
                             'Content-Type': 'application/json'
                         }
                     }).then
                     (function success(response) {
                         if (response.status === 200) {
-                            // schoolProfileService.setSourceData(response.data);
                             $rootScope.$broadcast('ClassListLoad', response.data);
                             showHideService.setCleanScreen();
                             showHideService.setShowClassList(true);
@@ -124,10 +122,10 @@ angular.module('mainApp')
                 };
 
                 $scope.requestProfList = function () {
-                    console.log(BACKEND_API + 'v1/person/prof/'+$scope.schools[0]["school_id"]);
+                    console.log(BACKEND_API + 'v1/person/prof/'+$scope.profile_schools[0]["school_id"]);
                     $http({
                         method: 'GET',
-                        url: BACKEND_API + 'v1/person/prof/'+$scope.schools[0]["school_id"],
+                        url: BACKEND_API + 'v1/person/prof/'+$scope.profile_schools[0]["school_id"],
                         headers: {
                             'Content-Type': 'application/json'
                         }
@@ -135,9 +133,9 @@ angular.module('mainApp')
                     (function success(response) {
                         if (response.status === 200) {
                             // schoolProfileService.setSourceData(response.data);
-                            $rootScope.$broadcast('ProfListLoad', response.data);
+                            $rootScope.$broadcast('profListLoad', response.data);
+                            console.log('Broadcast: profListLoad');
                             console.log(response.data);
-                            console.log(response);
                             showHideService.setCleanScreen();
                             showHideService.setShowProfList(true);
                         }

@@ -175,21 +175,12 @@ angular.module('mainApp')
     .controller('studentListController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.sfull_name = '';
-                $scope.fantasy_name = '';
-                $scope.address = '';
-                $scope.email = '';
-                $scope.contact = '';
-                $scope.document = '';
-                $scope.owner_name = '';
-                $scope.owner_attribute = '';
-                $scope.owner_contact = '';
-                $scope.showSchoolListCrud = true;
-                $scope.schools = [];
-                $rootScope.$on('SchoolListLoad', function (event, args) {
-                    $scope.showSchoolListCrud = false;
+                $scope.showStudentListCrud = true;
+                $scope.list_students = [];
+                $rootScope.$on('studentListLoad', function (event, args) {
+                    $scope.showStudentListCrud = false;
                     if (args !== null) {
-                        $scope.schools = args;
+                        $scope.list_students = args;
                     }
 
                 });

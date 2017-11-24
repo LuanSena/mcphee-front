@@ -290,7 +290,7 @@
                         <ul class="treeview-menu">
                             <li><a href="#" ng-click="requestClassesList()"><i class="fa fa-circle-o"></i>Turmas</a></li>
                             <li><a href="#" ng-click="requestProfList()"><i class="fa fa-circle-o"></i>Profissionais</a></li>
-                            <li><a href="views/students.html"><i class="fa fa-circle-o"></i>Alunos</a></li>
+                            <li><a href="#" ng-click="requestStudentList()"><i class="fa fa-circle-o"></i>Alunos</a></li>
                         </ul>
                     </li>
 
@@ -982,7 +982,7 @@
             </div>
         </div>
         <div name="prof-crud" ng-show="appCtl.getShowProfList()">
-            <div class="content-wrapper" ng-controller="profListController as sllc">
+            <div class="content-wrapper" ng-controller="profListController">
                 <section class="content-header">
                     <h1>
                         Profissionais
@@ -1051,24 +1051,24 @@
             </div>
         </div>
         <div name="students-crud" ng-show="appCtl.getShowStudentList()">
-            <div class="content-wrapper" ng-controller="schoolListController as sllc">
+            <div class="content-wrapper" ng-controller="studentListController">
                 <section class="content-header">
                     <h1>
-                        Escolas
+                        Alunos
                         <small>Listagem e administração</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
                         <li><a href="#">administração</a></li>
-                        <li class="active">escolas</li>
+                        <li class="active">Alunos</li>
                     </ol>
                 </section>
                 <section class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div name="crud" ng-show="showSchoolListCrud" class="box box-primary">
+                            <div name="crud" ng-show="showStudentListCrud" class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Incluir/Alterar escola</h3>
+                                    <h3 class="box-title">Incluir/Alterar Alunos</h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <!-- form start -->
@@ -1121,27 +1121,31 @@
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud" ng-click="showSchoolListCrud = true">Adicionar Nova</button>
-                                    <table id="example2" class="table table-bordered table-striped">
+                                    <button class="btn btn-primary" ng-show="!showStudentListCrud" ng-click="showStudentListCrud = true">Adicionar Nova</button>
+                                    <table id="" class="table table-bordered table-striped">
 
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>CNPJ</th>
                                             <th>Nome</th>
-                                            <th>Contato</th>
-                                            <th>Responsável</th>
-                                            <th>Contato do responsável</th>
+                                            <th>Idade</th>
+                                            <th>Classe</th>
+                                            <th>Turma</th>
+                                            <th>Nacionalidade</th>
+                                            <th>Cadastro</th>
+                                            <th>Observação</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="row in schools">
-                                            <td>{{row.schoolId}}</td>
-                                            <td>{{row.document}}</td>
-                                            <td>{{row.fantasyName}}</td>
-                                            <td>{{row.contact}}</td>
-                                            <td>{{row.ownerName}}</td>
-                                            <td>{{row.ownerContact}}</td>
+                                        <tr ng-repeat="row in list_students">
+                                            <td>{{row.studentId}}</td>
+                                            <td>{{row.studentName}}</td>
+                                            <td>{{row.studentAge}}</td>
+                                            <td>{{row.studentGrade}}</td>
+                                            <td>{{row.className}}</td>
+                                            <td>{{row.studentNacionality}}</td>
+                                            <td>{{row.studentCreatedAt}}</td>
+                                            <td>{{row.studentObs}}</td>
                                         </tr>
                                         </tbody>
                                         <tfoot>

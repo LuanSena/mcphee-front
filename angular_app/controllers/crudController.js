@@ -220,3 +220,17 @@ angular.module('mainApp')
                 };
 
             }]);
+
+angular.module('mainApp')
+    .controller('myStudentsController',
+        ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
+            function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
+                $scope.my_students = [];
+                $rootScope.$on('myStudentsLoad', function (event, args) {
+                    if (args !== null) {
+                        console.log("hail to the king");
+                        $scope.my_students = args;
+                        console.log(args)
+                    }
+                });
+            }]);

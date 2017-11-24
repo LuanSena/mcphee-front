@@ -31,6 +31,9 @@
             return showHideService.getShowCreateDiary()
         };
 
+        this.getShowMyStudents = function() {
+            return showHideService.getShowMyStudents()
+        };
         this.getShowManagerList = function() {
             return showHideService.getShowManagerList()
         };

@@ -7,6 +7,7 @@ angular.module('mainApp')
         this.showSchoolList = false;
         this.showStudentProfile = false;
         this.createDiary = false;
+        this.showmyStudents = false;
 
         this.showManagerList = false;
         this.showClassList = false;
@@ -106,6 +107,16 @@ angular.module('mainApp')
         this.setShowStudentList = function (param) {
             return this.showStudentList = param;
         };
+
+
+        this.getShowMyStudents = function () {
+            return this.showmyStudents;
+        };
+
+        this.setShowMyStudents = function (param) {
+            return this.showmyStudents = param;
+        };
+
         this.setCleanScreen = function () {
             this.showLogin = false;
             this.showMain = false;
@@ -113,7 +124,7 @@ angular.module('mainApp')
             this.showStudentProfile = false;
             this.createDiary = false;
             this.showSchoolList = false;
-
+            this.showmyStudents = false;
             this.showManagerList = false;
             this.showClassList = false;
             this.showProfList = false;

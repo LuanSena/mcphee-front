@@ -236,4 +236,27 @@ angular.module('mainApp')
                         }
                     })
                 };
+
+                $scope.requestMyStudents = function () {
+                    $http({
+                        method: 'GET',
+                        url: BACKEND_API + 'v1/student/prof/' + treeService.getPersonId(),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+
+                            $rootScope.$broadcast('myStudentsLoad', response.data);
+                            showHideService.setCleanScreen();
+                            showHideService.setShowMyStudents(true);
+                        }
+                    }, function error(response) {
+
+                        if (response.status === 401) {
+                            console.log('Fail to request my students, status:' + response.status);
+                        }
+                    })
+                };
             }]);

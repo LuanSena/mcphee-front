@@ -16,24 +16,24 @@ angular.module('mainApp')
 
                 });
                 $scope.postManager = function () {
-                    $scope.showSchoolListCrud = false;
+                    $scope.showManagerListCrud = false;
                     console.log($scope.showSchoolListCrud);
                     $http({
                         method: 'POST',
-                        url: BACKEND_API + 'v1/person/manager',
+                        url: BACKEND_API + 'v1/person/managers',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'fullName': $scope.manager_document,
-                            'fantasyName': $scope.manager_school_id
+                            'personId': $scope.manager_crud_person_id,
+                            'schoolId': $scope.manager_crud_school_id
                         }
                     }).then
                     (function success(response) {
                         if (response.status === 202) {
                             $rootScope.$broadcast('ManagersListLoad');
-                            $scope.diary_stu.text = '';
-                            $scope.diary_stu.title = '';
+                            $scope.manager_crud_person_id = '';
+                            $scope.manager_crud_school_id = '';
                             alert("Gestor adicionado com sucesso!")
                         }
                     }, function error(response) {
@@ -80,7 +80,7 @@ angular.module('mainApp')
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
                 $scope.classId = '';
                 $scope.className = '';
-                $scope.showClassListCrud = false;
+                $scope.showClassListCrud = true;
                 $scope.classes = [];
                 $rootScope.$on('ClassListLoad', function (event, args) {
                     if (args !== null) {
@@ -91,15 +91,16 @@ angular.module('mainApp')
                 $scope.postClass = function () {
                     $scope.showSchoolListCrud = false;
                     console.log($scope.showSchoolListCrud);
+                    school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({
                         method: 'POST',
-                        url: BACKEND_API + 'v1/classes/'+$scope.class_school_id,
+                        url: BACKEND_API + 'v1/class',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'schoolId': $scope.sfull_name,
-                            'className': $scope.fantasy_name
+                            'schoolId': school_local_id,
+                            'className': $scope.class_name_crud
                         }
                     }).then
                     (function success(response) {
@@ -120,7 +121,7 @@ angular.module('mainApp')
     .controller('profListController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.prof_full_name = '';
+                $scope.prof_rud_person_id = '';
                 $scope.prof_document = '';
                 $scope.prof_contact = '';
                 $scope.prof_school_id = '';
@@ -134,9 +135,10 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postSchool = function () {
+                $scope.postProf = function () {
                     $scope.showSchoolListCrud = false;
                     console.log($scope.showSchoolListCrud);
+                    school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({
                         method: 'POST',
                         url: BACKEND_API + 'v1/school',
@@ -144,15 +146,8 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'fullName': $scope.sfull_name,
-                            'fantasyName': $scope.fantasy_name,
-                            'address': $scope.address,
-                            'email': $scope.email,
-                            'contact': $scope.contact,
-                            'document': $scope.document,
-                            'ownerName': $scope.owner_name,
-                            'ownerAttribute': $scope.owner_attribute,
-                            'ownerContact': $scope.owner_contact
+                            'schoolId': $scope.school_local_id,
+                            'personId': $scope.prof_rud_person_id
                         }
                     }).then
                     (function success(response) {

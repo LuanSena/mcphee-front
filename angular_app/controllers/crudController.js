@@ -179,7 +179,7 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postSchool = function () {
+                $scope.postStudent = function () {
                     $scope.showSchoolListCrud = false;
                     console.log($scope.showSchoolListCrud);
                     $http({

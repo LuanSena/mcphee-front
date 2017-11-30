@@ -23,16 +23,16 @@ angular.module('mainApp')
     .controller('schoolListController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.sfull_name = '';
-                $scope.fantasy_name = '';
-                $scope.address = '';
-                $scope.email = '';
-                $scope.contact = '';
-                $scope.document = '';
-                $scope.owner_name = '';
-                $scope.owner_attribute = '';
-                $scope.owner_contact = '';
-                $scope.showSchoolListCrud = true;
+                $scope.post_school_full_name = '1';
+                $scope.post_school_fantasy_name = '1';
+                $scope.post_school_address = '1';
+                $scope.post_school_email = '1';
+                $scope.post_school_contact = '1';
+                $scope.post_school_document = '1';
+                $scope.post_school_owner_name = '1';
+                $scope.post_school_owner_attribute = '1';
+                $scope.post_school_owner_contact = '1';
+                $scope.post_school_showSchoolListCrud = true;
                 $scope.schools = [];
                 $rootScope.$on('SchoolListLoad', function (event, args) {
                     $scope.showSchoolListCrud = false;
@@ -41,9 +41,18 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postSchool = function () {
+                $scope.postSchool = function (a, b, c, d, e, f, g, h, i) {
                     $scope.showSchoolListCrud = false;
-                    console.log($scope.showSchoolListCrud);
+                    full_name = a;
+                    fantasy_name = b;
+                    address = c;
+                    email = d;
+                    contact = e;
+                    document = f;
+                    owner_name = g;
+                    owner_attribute = h;
+                    owner_contact = i;
+
                     $http({
                         method: 'POST',
                         url: BACKEND_API + 'v1/school',
@@ -51,15 +60,15 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'fullName': $scope.sfull_name,
-                            'fantasyName': $scope.fantasy_name,
-                            'address': $scope.address,
-                            'email': $scope.email,
-                            'contact': $scope.contact,
-                            'document': $scope.document,
-                            'ownerName': $scope.owner_name,
-                            'ownerAttribute': $scope.owner_attribute,
-                            'ownerContact': $scope.owner_contact
+                            'fullName':full_name,
+                            'fantasyName':fantasy_name,
+                            'address':address,
+                            'email':email,
+                            'contact':contact,
+                            'document':document,
+                            'ownerName':owner_name,
+                            'ownerAttribute':owner_attribute,
+                            'ownerContact':owner_contact
                         }
                     }).then
                     (function success(response) {

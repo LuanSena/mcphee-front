@@ -82,7 +82,7 @@ angular.module('mainApp')
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
                 $scope.classId = '';
                 $scope.className = '';
-                $scope.showClassListCrud = true;
+                $scope.showClassListCrud = false;
                 $scope.classes = [];
                 $rootScope.$on('ClassListLoad', function (event, args) {
                     if (args !== null) {
@@ -90,9 +90,7 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postClass = function () {
-                    $scope.showSchoolListCrud = false;
-                    console.log($scope.showSchoolListCrud);
+                $scope.postClass = function (class_name_crud) {
                     school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({
                         method: 'POST',
@@ -102,7 +100,7 @@ angular.module('mainApp')
                         },
                         data: {
                             'schoolId': school_local_id,
-                            'className': $scope.class_name_crud
+                            'className': class_name_crud
                         }
                     }).then
                     (function success(response) {

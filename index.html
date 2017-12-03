@@ -911,14 +911,14 @@
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postClass()">Adicionar</button>
-                                        <button class="btn btn-danger" ng-click="showClassListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary" ng-click="postClass(class_name_crud)">Adicionar</button>
+                                        <button class="btn btn-danger" ng-click="showClassListCrud = false;">Cancelar</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showclassListCrud" ng-click="showclassListCrud = true">Adicionar Nova</button>
+                                    <button class="btn btn-primary" ng-show="!showClassListCrud" ng-click="showClassListCrud = true;">Adicionar Nova</button>
                                     <table class="table table-bordered table-striped">
 
                                         <thead>
@@ -967,14 +967,14 @@
                                 <form role="form">
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label>Pessoa ID</label>
+                                            <label>Documento do usuário</label>
                                             <input type="text" ng-model="prof_rud_person_id" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postProf()">Enviar</button>
+                                        <button class="btn btn-primary" ng-click="postProf(prof_rud_person_id)">Enviar</button>
                                         <button class="btn btn-danger" ng-click="showProfListCrud = false">Cancelar</button>
                                     </div>
                                 </form>

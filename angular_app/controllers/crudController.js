@@ -27,7 +27,7 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'personId': manager_crud_person_id,
+                            'document': manager_crud_person_id,
                             'schoolId': manager_crud_school_id
                         }
                     }).then

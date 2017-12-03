@@ -15,9 +15,11 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postManager = function () {
-                    $scope.showManagerListCrud = false;
-                    console.log($scope.showSchoolListCrud);
+                $scope.postManager = function (manager_crud_person_id, manager_crud_school_id) {
+                    // $scope.showManagerListCrud = false;
+                    // console.log(manager_crud_person_id);
+                    // console.log(manager_crud_school_id);
+                    // return true
                     $http({
                         method: 'POST',
                         url: BACKEND_API + 'v1/person/managers',
@@ -25,15 +27,15 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'personId': $scope.manager_crud_person_id,
-                            'schoolId': $scope.manager_crud_school_id
+                            'personId': manager_crud_person_id,
+                            'schoolId': manager_crud_school_id
                         }
                     }).then
                     (function success(response) {
                         if (response.status === 202) {
                             $rootScope.$broadcast('ManagersListLoad');
-                            $scope.manager_crud_person_id = '';
-                            $scope.manager_crud_school_id = '';
+                            manager_crud_person_id = '';
+                            manager_crud_school_id = '';
                             alert("Gestor adicionado com sucesso!")
                         }
                     }, function error(response) {
@@ -116,6 +118,56 @@ angular.module('mainApp')
                 };
 
             }]);
+
+angular.module('mainApp')
+    .controller('registerController',
+        ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
+            function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
+                $scope.nome = ""
+                $scope.documento = ""
+                $scope.endereco = ""
+                $scope.numero = ""
+                $scope.complemento = ""
+                $scope.idade = ""
+                $scope.contato = ""
+                $scope.senha = ""
+
+                $scope.postRegisterPerson = function (nome, documento, endereco, numero, complemento, idade, contato, senha, email) {
+                    $http({
+                        method: 'POST',
+                        url: BACKEND_API + 'v1/person',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        data: {
+                            'name': nome,
+                            'personFullName': nome,
+                            'document': documento,
+                            'addressName': endereco,
+                            'addressNumber': numero,
+                            'addressComplement': complemento,
+                            'age': idade,
+                            'email': email,
+                            'contact': contato,
+                            'password': senha
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 202) {
+                            alert("Classe cadastrada com sucesso!")
+
+                        }
+                    }, function error(response) {
+                        // $rootScope.$broadcast('SchoolListLoad');
+                        console.log(response);
+                        alert("Vish! check the console logs");
+                        $window.location.href = '/index.html';
+                    })
+
+                };
+
+            }]);
+
 
 angular.module('mainApp')
     .controller('profListController',

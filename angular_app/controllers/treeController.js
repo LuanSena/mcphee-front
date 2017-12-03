@@ -37,7 +37,7 @@ angular.module('mainApp')
 
                 $scope.shouldShowManager = function () {
                     num = treeService.getPersonPermission();
-                    if (num === 3 || num === 4) {
+                    if (num === 3) {
                         return true
                     } else {
                         return false
@@ -46,7 +46,7 @@ angular.module('mainApp')
 
                 $scope.shouldShowDaily = function () {
                     num = treeService.getPersonPermission();
-                    if (num === 2 || num === 4) {
+                    if (num === 2) {
                         return true
                     } else {
                         return false

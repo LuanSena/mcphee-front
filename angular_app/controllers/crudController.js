@@ -185,19 +185,18 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postProf = function () {
+                $scope.postProf = function (prof_rud_person_id) {
                     $scope.showSchoolListCrud = false;
-                    console.log($scope.showSchoolListCrud);
                     school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({
                         method: 'POST',
-                        url: BACKEND_API + 'v1/school',
+                        url: BACKEND_API + 'v1/person/prof',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'schoolId': $scope.school_local_id,
-                            'personId': $scope.prof_rud_person_id
+                            'schoolId': school_local_id,
+                            'personDocument': prof_rud_person_id
                         }
                     }).then
                     (function success(response) {
@@ -229,9 +228,9 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postStudent = function () {
+                $scope.postStudent = function (name, grade, born_date, nacionality, eating_obs, obs) {
                     $scope.showSchoolListCrud = false;
-                    console.log($scope.showSchoolListCrud);
+
                     $http({
                         method: 'POST',
                         url: BACKEND_API + 'v1/school',
@@ -239,15 +238,12 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'fullName': $scope.sfull_name,
-                            'fantasyName': $scope.fantasy_name,
-                            'address': $scope.address,
-                            'email': $scope.email,
-                            'contact': $scope.contact,
-                            'document': $scope.document,
-                            'ownerName': $scope.owner_name,
-                            'ownerAttribute': $scope.owner_attribute,
-                            'ownerContact': $scope.owner_contact
+                            'studentName':name,
+                            'studentGrade':grade,
+                            'studentBorn_date':born_date,
+                            'studentNacionality':nacionality,
+                            'studentEating_obs':eating_obs,
+                            'studentObs':obs
                         }
                     }).then
                     (function success(response) {

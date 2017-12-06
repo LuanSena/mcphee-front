@@ -121,14 +121,14 @@ angular.module('mainApp')
     .controller('registerController',
         ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
-                $scope.nome = ""
-                $scope.documento = ""
-                $scope.endereco = ""
-                $scope.numero = ""
-                $scope.complemento = ""
-                $scope.idade = ""
-                $scope.contato = ""
-                $scope.senha = ""
+                $scope.nome = "";
+                $scope.documento = "";
+                $scope.endereco = "";
+                $scope.numero = "";
+                $scope.complemento = "";
+                $scope.idade = "";
+                $scope.contato = "";
+                $scope.senha = "";
 
                 $scope.postRegisterPerson = function (nome, documento, endereco, numero, complemento, idade, contato, senha, email) {
                     $http({
@@ -230,10 +230,10 @@ angular.module('mainApp')
                 });
                 $scope.postStudent = function (name, grade, born_date, nacionality, eating_obs, obs) {
                     $scope.showSchoolListCrud = false;
-
+                    school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({
                         method: 'POST',
-                        url: BACKEND_API + 'v1/school',
+                        url: BACKEND_API + 'v1/student',
                         headers: {
                             'Content-Type': 'application/json'
                         },
@@ -243,7 +243,8 @@ angular.module('mainApp')
                             'studentBorn_date':born_date,
                             'studentNacionality':nacionality,
                             'studentEating_obs':eating_obs,
-                            'studentObs':obs
+                            'studentObs':obs,
+                            'schoolId': school_local_id
                         }
                     }).then
                     (function success(response) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="mainApp">
 <head>
-        <!--Angular app-->
+    <!--Angular app-->
     <script src="angular_app/angular.min.js"></script>
     <script type="text/javascript" src="angular_app/app.js"></script>
     <script type="text/javascript" src="angular_app/services/showHideService.js"></script>
@@ -38,8 +38,6 @@
     <!-- Google Font -->
     <!--<link rel="stylesheet"-->
     <!--href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
-
-
 
 
 </head>
@@ -166,7 +164,8 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li ng-repeat="row in profile_schools"><a href="#" ng-click="requestSchoolById(row.school_id)"><i
+                            <li ng-repeat="row in profile_schools"><a href="#"
+                                                                      ng-click="requestSchoolById(row.school_id)"><i
                                     class="fa fa-circle-o"></i>{{row.school_name}}</a>
                             </li>
                         </ul>
@@ -191,8 +190,10 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#" ng-click="requestSchoolList()"><i class="fa fa-circle-o"></i>Escolas</a></li>
-                            <li><a href="#" ng-click="requestManagersList()"><i class="fa fa-circle-o"></i>Gestores</a></li>
+                            <li><a href="#" ng-click="requestSchoolList()"><i class="fa fa-circle-o"></i>Escolas</a>
+                            </li>
+                            <li><a href="#" ng-click="requestManagersList()"><i class="fa fa-circle-o"></i>Gestores</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -204,9 +205,12 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#" ng-click="requestClassesList()"><i class="fa fa-circle-o"></i>Turmas</a></li>
-                            <li><a href="#" ng-click="requestProfList()"><i class="fa fa-circle-o"></i>Profissionais</a></li>
-                            <li><a href="#" ng-click="requestStudentList()"><i class="fa fa-circle-o"></i>Alunos</a></li>
+                            <li><a href="#" ng-click="requestClassesList()"><i class="fa fa-circle-o"></i>Turmas</a>
+                            </li>
+                            <li><a href="#" ng-click="requestProfList()"><i class="fa fa-circle-o"></i>Profissionais</a>
+                            </li>
+                            <li><a href="#" ng-click="requestStudentList()"><i class="fa fa-circle-o"></i>Alunos</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -678,7 +682,7 @@
                                 <!--<h3 class="box-title">Suas crianças</h3>-->
 
                                 <!--<div class="box-tools pull-right">-->
-                                    <!--<span class="label label-danger">{{students_id}}</span>-->
+                                <!--<span class="label label-danger">{{students_id}}</span>-->
                                 <!--</div>-->
                             </div>
                             <!-- /.box-header -->
@@ -765,14 +769,19 @@
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postSchool(a, b, c, d, e, f, g, h, i)">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary"
+                                                ng-click="postSchool(a, b, c, d, e, f, g, h, i)">Enviar
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud" ng-click="showSchoolListCrud = true">Adicionar Nova</button>
+                                    <button class="btn btn-primary" ng-show="!showSchoolListCrud"
+                                            ng-click="showSchoolListCrud = true">Adicionar Nova
+                                    </button>
                                     <table id="example2" class="table table-bordered table-striped">
 
                                         <thead>
@@ -830,24 +839,32 @@
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label>Documento do usuário</label>
-                                            <input type="text" ng-model="manager_crud_person_id" class="form-control" placeholder="">
+                                            <input type="text" ng-model="manager_crud_person_id" class="form-control"
+                                                   placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label>Identificação da escola escola</label>
-                                            <input type="text" ng-model="manager_crud_school_id" class="form-control" placeholder="">
+                                            <input type="text" ng-model="manager_crud_school_id" class="form-control"
+                                                   placeholder="">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postManager(manager_crud_person_id, manager_crud_school_id)">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showManagerListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary"
+                                                ng-click="postManager(manager_crud_person_id, manager_crud_school_id)">
+                                            Enviar
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="showManagerListCrud = false">Cancelar
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showManagerListCrud" ng-click="getManagerListCrudInfos(); showManagerListCrud = true;">Adicionar</button>
+                                    <button class="btn btn-primary" ng-show="!showManagerListCrud"
+                                            ng-click="getManagerListCrudInfos(); showManagerListCrud = true;">Adicionar
+                                    </button>
                                     <table id="" class="table table-bordered table-striped">
 
                                         <thead>
@@ -905,20 +922,26 @@
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label>Nome da turma</label>
-                                            <input type="text" ng-model="class_name_crud" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="class_name_crud" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postClass(class_name_crud)">Adicionar</button>
-                                        <button class="btn btn-danger" ng-click="showClassListCrud = false;">Cancelar</button>
+                                        <button class="btn btn-primary" ng-click="postClass(class_name_crud)">
+                                            Adicionar
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="showClassListCrud = false;">Cancelar
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showClassListCrud" ng-click="showClassListCrud = true;">Adicionar Nova</button>
+                                    <button class="btn btn-primary" ng-show="!showClassListCrud"
+                                            ng-click="showClassListCrud = true;">Adicionar Nova
+                                    </button>
                                     <table class="table table-bordered table-striped">
 
                                         <thead>
@@ -968,20 +991,25 @@
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label>Documento do usuário</label>
-                                            <input type="text" ng-model="prof_rud_person_id" class="form-control" placeholder="">
+                                            <input type="text" ng-model="prof_rud_person_id" class="form-control"
+                                                   placeholder="">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postProf(prof_rud_person_id)">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showProfListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary" ng-click="postProf(prof_rud_person_id)">Enviar
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="showProfListCrud = false">Cancelar
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showProfListCrud" ng-click="showProfListCrud = true">Adicionar Novo</button>
+                                    <button class="btn btn-primary" ng-show="!showProfListCrud"
+                                            ng-click="showProfListCrud = true">Adicionar Novo
+                                    </button>
                                     <table id="" class="table table-bordered table-striped">
 
                                         <thead>
@@ -1037,40 +1065,56 @@
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label>Nome</label>
-                                            <input type="text" ng-model="name" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="crud_student_name" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                         <div class="form-group">
-                                            <label>Ano</label>
-                                            <input type="Série" ng-model="grade" class="form-control" placeholder="...">
+                                            <label>Série</label>
+                                            <input type="text" ng-model="crud_student_grade" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                         <div class="form-group">
                                             <label>data de nascimento</label>
-                                            <input type="text" ng-model="born_date" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="crud_student_born_date" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                         <div class="form-group">
                                             <label>nacionalidade</label>
-                                            <input type="text" ng-model="nacionality" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="crud_student_nacionality" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                         <div class="form-group">
                                             <label>Observações alimentares</label>
-                                            <input type="text" ng-model="eating_obs" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="crud_student_eating_obs" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                         <div class="form-group">
                                             <label>Observações gerais</label>
-                                            <input type="text" ng-model="obs" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="crud_student_obs" class="form-control"
+                                                   placeholder="...">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button class="btn btn-primary" ng-click="postStudent(name, grade, born_date, nacionality, eating_obs, obs)">Enviar</button>
-                                        <button class="btn btn-danger" ng-click="showStudentListCrud = false">Cancelar</button>
+                                        <button class="btn btn-primary" ng-click="postStudent(crud_student_name,
+                                                                                              crud_student_grade,
+                                                                                              crud_student_born_date,
+                                                                                              crud_student_nacionality,
+                                                                                              crud_student_eating_obs,
+                                                                                              crud_student_obs)">
+                                            Enviar
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="showStudentListCrud = false">Cancelar
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="box">
                                 <div class="box-body">
-                                    <button class="btn btn-primary" ng-show="!showStudentListCrud" ng-click="showStudentListCrud = true">Adicionar Aluno</button>
+                                    <button class="btn btn-primary" ng-show="!showStudentListCrud"
+                                            ng-click="showStudentListCrud = true">Adicionar Aluno
+                                    </button>
                                     <table id="" class="table table-bordered table-striped">
 
                                         <thead>

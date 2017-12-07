@@ -114,6 +114,54 @@ angular.module('mainApp')
                     })
 
                 };
+                $scope.postClassProf = function (class_id, prof_id) {
+                    school_local_id = treeService.getSchools()[0]["school_id"];
+                    $http({
+                        method: 'POST',
+                        url: BACKEND_API + 'v1/class/prof',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        data: {
+                            'classId': class_id,
+                            'personId': prof_id
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 202) {
+                            alert("Registrado com sucesso")
+                        }
+                    }, function error(response) {
+                        // $rootScope.$broadcast('SchoolListLoad');
+                        console.log(response);
+                        alert("Vish! check the console logs");
+                    })
+
+                };
+                $scope.postClassStudent = function (class_id, student_id) {
+                    school_local_id = treeService.getSchools()[0]["school_id"];
+                    $http({
+                        method: 'POST',
+                        url: BACKEND_API + 'v1/class/student',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        data: {
+                            'classId': class_id,
+                            'studentId': student_id
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 202) {
+                            alert("Classe cadastrada com sucesso!")
+                        }
+                    }, function error(response) {
+                        // $rootScope.$broadcast('SchoolListLoad');
+                        console.log(response);
+                        alert("Vish! check the console logs");
+                    })
+
+                };
 
             }]);
 
@@ -217,8 +265,8 @@ angular.module('mainApp')
 
 angular.module('mainApp')
     .controller('studentListController',
-        ['$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'BACKEND_API', 'showHideService',
-            function ($http, $scope, $rootScope, treeService, schoolProfileService, BACKEND_API, showHideService) {
+        ['$timeout', '$http', '$rootScope', '$scope', 'treeService', 'schoolProfileService', 'studentProfileService', 'BACKEND_API', 'showHideService',
+            function ($timeout, $http, $scope, $rootScope, treeService, schoolProfileService, studentProfileService, BACKEND_API, showHideService) {
                 $scope.showStudentListCrud = true;
                 $scope.list_students = [];
                 $rootScope.$on('studentListLoad', function (event, args) {
@@ -228,6 +276,33 @@ angular.module('mainApp')
                     }
 
                 });
+                $scope.myrequestStudent = function (student_id) {
+                    console.log(student_id);
+                    $http({
+                        method: 'GET',
+                        url: BACKEND_API + 'v1/student/' + student_id,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            studentProfileService.setSourceData(response.data);
+                            // $rootScope.emit('StudentProfileReload', '');
+                            $timeout(function(){
+                                $rootScope.$broadcast('StudentProfileReload', '');
+                            });
+                            showHideService.setCleanScreen();
+                            showHideService.setShowStudentProfile(true);
+                        }
+                    }, function error(response) {
+
+                        if (response.status === 401) {
+                            console.log('Fail to request school by id, status:' + response.status);
+                        }
+                    }
+                    )
+                };
                 $scope.postStudent = function (name, grade, born_date, nacionality, eating_obs, obs) {
                     $scope.showSchoolListCrud = false;
                     school_local_id = treeService.getSchools()[0]["school_id"];
@@ -238,12 +313,12 @@ angular.module('mainApp')
                             'Content-Type': 'application/json'
                         },
                         data: {
-                            'studentName':name,
-                            'studentGrade':grade,
-                            'studentBorn_date':born_date,
-                            'studentNacionality':nacionality,
-                            'studentEating_obs':eating_obs,
-                            'studentObs':obs,
+                            'studentName': name,
+                            'studentGrade': grade,
+                            'studentBorn_date': born_date,
+                            'studentNacionality': nacionality,
+                            'studentEating_obs': eating_obs,
+                            'studentObs': obs,
                             'schoolId': school_local_id
                         }
                     }).then

@@ -1,5 +1,5 @@
 angular.module('mainApp')
-    .service('showHideService', function () {
+    .service('showHideService',['$rootScope', function ($rootScope) {
         this.showLogin = true;
         this.showMain = false;
         this.showMenus = false;
@@ -54,6 +54,7 @@ angular.module('mainApp')
         };
 
         this.setShowStudentProfile = function (param) {
+            $rootScope.$broadcast('StudentProfileReload', '')
             return this.showStudentProfile = param;
         };
 
@@ -130,4 +131,4 @@ angular.module('mainApp')
             this.showProfList = false;
             this.showStudentList = false;
         }
-    });
+    }]);

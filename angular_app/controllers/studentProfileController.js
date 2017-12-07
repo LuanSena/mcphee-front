@@ -3,6 +3,7 @@ angular.module('mainApp')
         ['$http', '$rootScope', '$scope', 'treeService', 'studentProfileService', 'BACKEND_API', 'showHideService',
             function ($http, $scope, $rootScope, treeService, studentProfileService, BACKEND_API, showHideService) {
                 $rootScope.$on('StudentProfileReload', function (event, args) {
+                    console.log("Received: StudentProfileReload");
                     $scope.student_id = studentProfileService.getStudentId();
                     $scope.student_class = 0;
                     $scope.student_school_name = 'a';

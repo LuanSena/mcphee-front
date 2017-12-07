@@ -3,6 +3,7 @@ angular.module('mainApp')
         this.source_data = 0;
 
         this.setSourceData = function (param) {
+            console.log(param);
             this.source_data = param;
         };
 

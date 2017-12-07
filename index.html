@@ -528,6 +528,7 @@
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="#timeline" data-toggle="tab">Diários</a></li>
                                     <li><a href="#settings" data-toggle="tab">Adicionar diário</a></li>
+                                    <li><a href="#studentowners" ng-show="shouldShowManager()" data-toggle="tab">Responsáveis</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <!-- /.tab-pane -->
@@ -588,6 +589,38 @@
                                                             class="fa fa-envelope-o"></i> ENVIAR
                                                     </button>
                                                 </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane" name="student-diary-post" id="studentowners">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="inputName" class="col-sm-2 control-label">Documento</label>
+
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id=""
+                                                           ng-model="owner_document">
+                                                </div>
+                                                <button class="btn btn-primary" ng-click="postStudentOwner(owner_document)"><i
+                                                        class="fa fa-envelope-o"></i> Adicionar
+                                                </button>
+                                            </div>
+                                            <div class="table-owners">
+                                                <table id="" class="table table-bordered table-striped">
+
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Documento</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr ng-repeat="row in owners">
+                                                        <td>{{row.document}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                </table>
                                             </div>
                                         </form>
                                     </div>

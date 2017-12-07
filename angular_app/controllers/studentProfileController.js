@@ -7,6 +7,7 @@ angular.module('mainApp')
                     $scope.student_id = studentProfileService.getStudentId();
                     $scope.student_class = 0;
                     $scope.student_school_name = 'a';
+                    $scope.owner_document= '...';
                     $scope.student_name = studentProfileService.getStudentName();
                     $scope.student_grade = studentProfileService.getStudentGrade();
                     $scope.student_age = studentProfileService.getStudentAge();
@@ -17,9 +18,39 @@ angular.module('mainApp')
 
                 });
                 $scope.diary_stu = {
-                    text: '...',
-                    title: '...'
+                    text: '',
+                    title: ''
                 };
+
+                $scope.postStudentOwner = function (param) {
+                    console.log(param);
+                    if (param !== '...') {
+                        $http({
+                            method: 'POST',
+                            url: BACKEND_API + 'v1/student/' + $scope.student_id + '/owner',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            data: {
+                                'ownerDocument': param
+                            }
+                        }).then
+                        (function success(response) {
+                            if (response.status === 202) {
+                                $scope.diary_stu.text = '';
+                                $scope.diary_stu.title = '';
+                                alert("Diário publicado com sucesso!")
+                            }
+                        }, function error(response) {
+                            console.log(response);
+                            alert("Ocorreu um erro!");
+                        })
+                    }
+                    else {
+                        alert("É necessário digitar um texto")
+                    }
+                };
+
                 $scope.postStudentDiary = function () {
                     if ($scope.diary_stu.text !== '...') {
                         $http({

@@ -10,6 +10,15 @@ angular.module('mainApp')
         this.getStudentId = function () {
             return this.source_data["studentId"]
         };
+                
+        this.getSchoolName = function () {
+            return this.source_data["schoolName"]
+        };
+
+        this.getClassName = function () {
+            return this.source_data["className"]
+        };
+
         this.getStudentName = function () {
             return this.source_data["name"]
         };

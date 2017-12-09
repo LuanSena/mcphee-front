@@ -5,9 +5,9 @@ angular.module('mainApp')
                 $rootScope.$on('StudentProfileReload', function (event, args) {
                     console.log("Received: StudentProfileReload");
                     $scope.student_id = studentProfileService.getStudentId();
-                    $scope.student_class = 0;
-                    $scope.student_school_name = 'a';
-                    $scope.owner_document= '...';
+                    $scope.student_class = studentProfileService.getClassName();
+                    $scope.student_school_name = studentProfileService.getSchoolName();
+                    $scope.owner_document= '';
                     $scope.student_name = studentProfileService.getStudentName();
                     $scope.student_grade = studentProfileService.getStudentGrade();
                     $scope.student_age = studentProfileService.getStudentAge();

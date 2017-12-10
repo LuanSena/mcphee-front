@@ -120,6 +120,25 @@ angular.module('mainApp')
                         alert("ERROR! check the console logs");
                     })
                 };
+
+                $scope.removeStudentFromClass = function (student_id, class_id) {
+                    $http({
+                        method: 'DELETE',
+                        url: BACKEND_API + 'v1/class/'+ class_id +'/student/'+student_id,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            $scope.getClassDetail(class_id, $scope.classDetailName)
+                        }
+                    }, function error(response) {
+                        console.log(response);
+                        alert("ERROR! check the console logs");
+                    })
+                };
+
                 $scope.getClassDetail = function (class_id, class_name) {
                     school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({

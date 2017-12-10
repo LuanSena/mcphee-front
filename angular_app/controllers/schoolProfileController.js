@@ -41,18 +41,19 @@ angular.module('mainApp')
                     }
 
                 });
-                $scope.postSchool = function (a, b, c, d, e, f, g, h, i) {
+                $scope.postSchool = function (a, b, c, d, e, documento, g, h, i) {
+                    console.log(documento);
                     $scope.showSchoolListCrud = false;
                     full_name = a;
                     fantasy_name = b;
                     address = c;
                     email = d;
                     contact = e;
-                    document = f;
+                    documento_school_crud = documento;
                     owner_name = g;
                     owner_attribute = h;
                     owner_contact = i;
-
+                    console.log(documento_school_crud);
                     $http({
                         method: 'POST',
                         url: BACKEND_API + 'v1/school',
@@ -65,7 +66,7 @@ angular.module('mainApp')
                             'address':address,
                             'email':email,
                             'contact':contact,
-                            'document':document,
+                            'document':documento_school_crud,
                             'ownerName':owner_name,
                             'ownerAttribute':owner_attribute,
                             'ownerContact':owner_contact
@@ -75,7 +76,7 @@ angular.module('mainApp')
                         if (response.status === 202) {
                             $scope.diary_stu.text = '';
                             $scope.diary_stu.title = '';
-                            alert("Diário publicado com sucesso!")
+                            alert("Cadastrado com sucesso!")
                         }
                     }, function error(response) {
                         $rootScope.$broadcast('SchoolListLoad');

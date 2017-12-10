@@ -781,7 +781,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>CNPJ</label>
-                                            <input type="text" ng-model="f" class="form-control" placeholder="...">
+                                            <input type="text" ng-model="documento" class="form-control" placeholder="...">
                                         </div>
                                         <div class="form-group">
                                             <label>Nome do responsável</label>
@@ -800,7 +800,7 @@
 
                                     <div class="box-footer">
                                         <button class="btn btn-primary"
-                                                ng-click="postSchool(a, b, c, d, e, f, g, h, i)">Enviar
+                                                ng-click="postSchool(a, b, c, d, e, documento, g, h, i)">Enviar
                                         </button>
                                         <button class="btn btn-danger" ng-click="showSchoolListCrud = false">Cancelar
                                         </button>
@@ -1169,7 +1169,7 @@
                                                    placeholder="...">
                                         </div>
                                         <div class="form-group">
-                                            <label>data de nascimento</label>
+                                            <label>data de nascimento(AAAA-MM-DD)</label>
                                             <input type="text" ng-model="crud_student_born_date" class="form-control"
                                                    placeholder="...">
                                         </div>

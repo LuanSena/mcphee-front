@@ -40,7 +40,7 @@ angular.module('mainApp')
                             if (response.status === 202) {
                                 $scope.diary_stu.text = '';
                                 $scope.diary_stu.title = '';
-                                alert("Diário publicado com sucesso!")
+                                alert("Responsável registrado com sucesso!")
                             }
                         }, function error(response) {
                             console.log(response);

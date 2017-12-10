@@ -226,7 +226,7 @@ angular.module('mainApp')
                     }).then
                     (function success(response) {
                         if (response.status === 202) {
-                            alert("Classe cadastrada com sucesso!")
+                            alert("Registrado com sucesso!")
                         }
                     }, function error(response) {
                         // $rootScope.$broadcast('SchoolListLoad');
@@ -273,7 +273,7 @@ angular.module('mainApp')
                     }).then
                     (function success(response) {
                         if (response.status === 202) {
-                            alert("Classe cadastrada com sucesso!")
+                            alert("Registro realizado com sucesso!")
 
                         }
                     }, function error(response) {
@@ -324,7 +324,7 @@ angular.module('mainApp')
                         if (response.status === 202) {
                             $scope.diary_stu.text = '';
                             $scope.diary_stu.title = '';
-                            alert("Diário publicado com sucesso!")
+                            alert("Cadastrado com sucesso!")
                         }
                     }, function error(response) {
                         $rootScope.$broadcast('SchoolListLoad');
@@ -399,7 +399,7 @@ angular.module('mainApp')
                         if (response.status === 202) {
                             $scope.diary_stu.text = '';
                             $scope.diary_stu.title = '';
-                            alert("Diário publicado com sucesso!")
+                            alert("Registrado com sucesso!")
                         }
                     }, function error(response) {
                         $rootScope.$broadcast('SchoolListLoad');

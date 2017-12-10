@@ -14,6 +14,8 @@ angular.module('mainApp')
         this.showProfList = false;
         this.showStudentList = false;
 
+        this.showclassDetail = false;
+
 
 
 
@@ -54,7 +56,7 @@ angular.module('mainApp')
         };
 
         this.setShowStudentProfile = function (param) {
-            $rootScope.$broadcast('StudentProfileReload', '')
+            $rootScope.$broadcast('StudentProfileReload', '');
             return this.showStudentProfile = param;
         };
 
@@ -118,7 +120,16 @@ angular.module('mainApp')
             return this.showmyStudents = param;
         };
 
+        this.getShowclassDetail = function () {
+            return this.showclassDetail;
+        };
+
+        this.setShowclassDetail = function (param) {
+            this.showclassDetail = param
+        };
+
         this.setCleanScreen = function () {
+            this.showclassDetail = false;
             this.showLogin = false;
             this.showMain = false;
             this.showSchoolProfile = false;

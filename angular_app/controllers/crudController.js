@@ -84,12 +84,66 @@ angular.module('mainApp')
                 $scope.className = '';
                 $scope.showClassListCrud = false;
                 $scope.classes = [];
+                $scope.classDetailProfs = [];
+                $scope.classDetailStudents = [];
+                $scope.classDetailName = "";
+                $scope.classDetailId = "";
                 $rootScope.$on('ClassListLoad', function (event, args) {
                     if (args !== null) {
                         $scope.classes = args;
                     }
 
                 });
+
+                $rootScope.$on('ClassDetailReload', function (event, args) {
+                    console.log('received: ClassDetailReload');
+                    if (args !== null) {
+                        $scope.classDetailProfs = args["profs"];
+                        $scope.classDetailStudents = args["students"];
+                    }
+
+                });
+                $scope.removeProfFromClass = function (prof_id, class_id) {
+                    $http({
+                        method: 'DELETE',
+                        url: BACKEND_API + 'v1/class/'+ class_id +'/prof/'+prof_id,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            $scope.getClassDetail(class_id, $scope.classDetailName)
+                        }
+                    }, function error(response) {
+                        console.log(response);
+                        alert("ERROR! check the console logs");
+                    })
+                };
+                $scope.getClassDetail = function (class_id, class_name) {
+                    school_local_id = treeService.getSchools()[0]["school_id"];
+                    $http({
+                        method: 'GET',
+                        url: BACKEND_API + 'v1/class/details/'+ class_id,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then
+                    (function success(response) {
+                        if (response.status === 200) {
+                            $rootScope.$broadcast('ClassDetailReload', response.data);
+                            $scope.classDetailName = class_name;
+                            $scope.classDetailId = class_id;
+                            showHideService.setCleanScreen();
+                            showHideService.setShowclassDetail(true)
+                        }
+                    }, function error(response) {
+                        // $rootScope.$broadcast('SchoolListLoad');
+                        console.log(response);
+                        alert("Vish! check the console logs");
+                    })
+
+                };
                 $scope.postClass = function (class_name_crud) {
                     school_local_id = treeService.getSchools()[0]["school_id"];
                     $http({

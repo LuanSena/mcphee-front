@@ -46,6 +46,9 @@
         this.getShowStudentList = function() {
             return showHideService.getShowStudentList()
         };
+        this.getShowclassDetail = function () {
+            return showHideService.getShowclassDetail()
+        }
 
     }]);
 })();

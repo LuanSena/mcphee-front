@@ -7,6 +7,7 @@ angular.module('mainApp')
                     $scope.student_id = studentProfileService.getStudentId();
                     $scope.student_class = studentProfileService.getClassName();
                     $scope.student_school_name = studentProfileService.getSchoolName();
+                    $scope.owners =  studentProfileService.getOwners();
                     $scope.owner_document= '';
                     $scope.student_name = studentProfileService.getStudentName();
                     $scope.student_grade = studentProfileService.getStudentGrade();

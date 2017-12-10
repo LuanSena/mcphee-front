@@ -280,9 +280,9 @@
                             </ul>
                         </div>
                         <!-- /.box-body -->
-                        <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">Ver todas as mensagens</a>
-                        </div>
+                        <!--<div class="box-footer text-center">-->
+                            <!--<a href="javascript:void(0)" class="uppercase">Ver todas as mensagens</a>-->
+                        <!--</div>-->
                         <!-- /.box-footer -->
                     </div>
 
@@ -333,14 +333,12 @@
                                         </thead>
                                         <tbody>
                                         <tr ng-repeat="row in diarys">
-                                            <td onClick="alert('ok')">{{row.diaryId}}</td>
-                                            <td onClick="alert('ok')">{{row.studentName}}</td>
-                                            <td onClick="alert('ok')">
+                                            <td>{{row.diaryId}}</td>
+                                            <td>{{row.studentName}}</td>
+                                            <td>
                                                 {{row.diaryDate}}
                                             </td>
-
                                         </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -612,11 +610,17 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Documento</th>
+                                                        <th>Nome</th>
+                                                        <th>Contato</th>
+                                                        <th>Email</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr ng-repeat="row in owners">
                                                         <td>{{row.document}}</td>
+                                                        <td>{{row.name}}</td>
+                                                        <td>{{row.contact}}</td>
+                                                        <td>{{row.email}}</td>
                                                     </tr>
                                                     </tbody>
                                                     <tfoot>
